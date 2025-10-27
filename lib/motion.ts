@@ -1,4 +1,5 @@
-export type Variant = Record<string, any>;
+import type { Variants } from 'framer-motion';
+export type Variant = Variants;
 
 export function fadeUp(reduce: boolean, y = 10, duration = 0.5): Variant {
   return {
@@ -15,4 +16,5 @@ export function stagger(reduce: boolean, staggerChildren = 0.08): Variant {
 }
 
 export const viewportOnce = { amount: 0.2, once: true } as const;
+
 

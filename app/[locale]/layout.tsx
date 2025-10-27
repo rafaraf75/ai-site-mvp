@@ -59,7 +59,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const {locale} = await params;
-  const messages = (await import(`../../locales/${locale}.json`)).default as any;
+  const messages = (await import(`../../locales/${locale}.json`)).default as { nav: Record<string,string>; footer: { rights: string; privacy: string; social: string } };
 
   return (
     <>
@@ -85,3 +85,4 @@ export default async function LocaleLayout({
       </>
   );
 }
+

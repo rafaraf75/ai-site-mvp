@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import {useTheme} from "next-themes";
@@ -24,4 +25,5 @@ export default function ThemeToggle() {
     </Button>
   );
 }
+
 

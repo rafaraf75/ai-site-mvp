@@ -29,7 +29,7 @@ export default function ContactForm({locale}: {locale: string}) {
       setSent("ok");
       trackEvent("contact_sent", {locale});
       reset();
-    } catch (e) {
+    } catch {
       setSent("err");
     }
   }
@@ -88,4 +88,5 @@ export default function ContactForm({locale}: {locale: string}) {
     </form>
   );
 }
+
 

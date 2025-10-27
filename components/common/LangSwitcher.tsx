@@ -4,11 +4,12 @@ import Link from "next/link";
 import {usePathname} from "next/navigation";
 
 const SUPPORTED = ["pl", "en", "es"] as const;
+const isSupported = (val: string): val is typeof SUPPORTED[number] => (SUPPORTED as readonly string[]).includes(val);
 
 function withLocale(pathname: string, target: string) {
   if (!pathname) return `/${target}`;
   const parts = pathname.split("/");
-  if (parts.length > 1 && SUPPORTED.includes(parts[1] as any)) {
+  if (parts.length > 1 && isSupported(parts[1])) {
     parts[1] = target;
     return parts.join("/") || `/${target}`;
   }
@@ -29,4 +30,7 @@ export default function LangSwitcher() {
     </div>
   );
 }
+
+
+
 
