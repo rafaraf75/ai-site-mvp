@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Strona startowa",
+    "description": "Witamy w naszym MVP"
+  },
+  "cases": {
+    "title": "Mini-case’y",
+    "items": [
+      {"label": "Leadów w 30 dni", "value": "+120%", "desc": "Po wdrożeniu SEO + optymalizacji CWV."},
+      {"label": "Średni czas LCP", "value": "1.9s", "desc": "Mierzony na mobile (p95)."},
+      {"label": "Konwersja kontaktów", "value": "+35%", "desc": "Dzięki jasnemu UVP i CTA."}
+    ]
+  },
+  "testimonials": {
+    "title": "Opinie",
+    "items": [
+      {"quote": "Szybkie wdrożenie i świetne wyniki w Lighthouse.", "author": "Katarzyna", "role": "Marketing Lead"},
+      {"quote": "i18n i dark mode po prostu działają.", "author": "Michał", "role": "Product Manager"},
+      {"quote": "Prosty formularz, a liczba zapytań wzrosła.", "author": "Anna", "role": "Founder"}
+    ]
+  },
+  "servicesPreview": {
+    "title": "Usługi",
+    "cta": "Zobacz ofertę",
+    "ai": {
+      "title": "Asystenci AI",
+      "desc": "Kreatywne i produktywne wsparcie dopasowane do Twoich procesów."
+    },
+    "web": {
+      "title": "Strony i Serwisy",
+      "desc": "Nowoczesne, szybkie i dostępne strony z naciskiem na SEO."
+    }
+  },
+  "nav": {
+    "home": "Start",
+    "services": "Usługi",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "privacy": "Polityka prywatności",
+    "social": "Media społecznościowe"
+  },
+  "home": {
+    "heading": "Asystenci AI i strony, które robią robotę",
+    "subheading": "Budujemy szybkie, dostępne i SEO-friendly landing page z i18n i dark mode.",
+    "ctaDemo": "Zobacz demo",
+    "ctaCall": "Umów rozmowę",
+    "benefitsTitle": "Korzyści",
+    "benefits": [
+      {"title": "Szybkość", "desc": "Core Web Vitals na zielono dzięki optymalizacjom."},
+      {"title": "i18n", "desc": "Pełne tłumaczenia PL/EN/ES i hreflang."},
+      {"title": "Dark mode", "desc": "Motyw dostosowany do systemu z przełącznikiem."},
+      {"title": "A11y", "desc": "Skupiony na dostępności: aria, kontrast, klawiatura."}
+    ],
+    "changeLanguage": "Zmień język"
+  },
+  "pricing": {
+    "title": "Pakiety",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "1990 zł",
+        "period": "jednorazowo",
+        "features": [
+          "Landing 1 strona",
+          "i18n (PL/EN/ES)",
+          "Dark mode",
+          "Podstawowe SEO"
+        ],
+        "cta": "Zamów"
+      },
+      {
+        "name": "Pro",
+        "price": "3990 zł",
+        "period": "jednorazowo",
+        "features": [
+          "Landing 3–5 sekcji",
+          "Animacje (Framer Motion)",
+          "Rozszerzone SEO + OG",
+          "Monitoring Lighthouse"
+        ],
+        "cta": "Wybierz",
+        "highlight": true
+      },
+      {
+        "name": "Custom",
+        "price": "wycena",
+        "features": [
+          "Strony/serwis szyty na miarę",
+          "Integracje i komponenty",
+          "Wsparcie wdrożeniowe",
+          "Priorytetowy kontakt"
+        ],
+        "cta": "Porozmawiajmy"
+      }
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {"q": "Jak wygląda proces?", "a": "Discovery → Design → Development → Launch. Pracujemy iteracyjnie."},
+      {"q": "Czy mogę edytować treści?", "a": "Tak, treści są w plikach JSON (i18n)."},
+      {"q": "Czy jest backend?", "a": "W MVP używamy Formspree lub prostego endpointu email."},
+      {"q": "Czy to jest szybkie?", "a": "Tak, celujemy w zielone Core Web Vitals."},
+      {"q": "Czy jest analytics?", "a": "Tak, Plausible – lekki i bez cookies."}
+    ]
+  },
+  "services": {
+    "title": "Usługi",
+    "intro": "Oferujemy dwa filary: Asystenci AI oraz Strony & Serwisy. Każdy projekt prowadzimy przejrzyście – od discovery po launch.",
+    "ai": {
+      "title": "Asystenci AI",
+      "points": [
+        "Automatyzacja powtarzalnych zadań i wsparcie zespołu",
+        "Integracje z narzędziami (w MVP minimalne)",
+        "Bezpieczne korzystanie z modeli – bez wrażliwych danych"
+      ]
+    },
+    "web": {
+      "title": "Strony i Serwisy",
+      "points": [
+        "Nowoczesny Next.js + Tailwind + shadcn/ui",
+        "i18n, dark mode i wydajność w standardzie",
+        "SEO, OG i lekka analityka (Plausible)"
+      ]
+    },
+    "process": {
+      "title": "Proces",
+      "steps": [
+        {"name": "Discovery", "desc": "Cel, zakres i priorytety. Uzgadniamy KPI i mapę drogową."},
+        {"name": "Design", "desc": "Układ sekcji, treści, komponenty UI. Polishing a11y i SEO."},
+        {"name": "Development", "desc": "Implementacja, i18n, animacje, testy smoke i Lighthouse."},
+        {"name": "Launch", "desc": "Deploy na Vercel, monitoring, iteracje po feedbacku."}
+      ]
+    },
+    "cta": "Skontaktuj się z nami"
+  }
+}

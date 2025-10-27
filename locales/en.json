@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "title": "Homepage",
+    "description": "Welcome to our MVP"
+  },
+  "cases": {
+    "title": "Mini case studies",
+    "items": [
+      {"label": "Leads in 30 days", "value": "+120%", "desc": "After SEO + CWV optimizations."},
+      {"label": "Avg LCP", "value": "1.9s", "desc": "Measured on mobile (p95)."},
+      {"label": "Contact conversion", "value": "+35%", "desc": "Clear UVP and CTA."}
+    ]
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "items": [
+      {"quote": "Fast delivery and great Lighthouse scores.", "author": "Kate", "role": "Marketing Lead"},
+      {"quote": "i18n and dark mode just work.", "author": "Michael", "role": "Product Manager"},
+      {"quote": "Simple form, more inquiries.", "author": "Anna", "role": "Founder"}
+    ]
+  },
+  "servicesPreview": {
+    "title": "Services",
+    "cta": "View offering",
+    "ai": {
+      "title": "AI Assistants",
+      "desc": "Creative, productive helpers tailored to your workflows."
+    },
+    "web": {
+      "title": "Websites & Apps",
+      "desc": "Modern, fast and accessible sites with SEO focus."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "social": "Social media"
+  },
+  "home": {
+    "heading": "AI assistants and sites that deliver",
+    "subheading": "We build fast, accessible, SEO-friendly landing pages with i18n and dark mode.",
+    "ctaDemo": "See demo",
+    "ctaCall": "Book a call",
+    "benefitsTitle": "Benefits",
+    "benefits": [
+      {"title": "Speed", "desc": "Green Core Web Vitals with smart optimizations."},
+      {"title": "i18n", "desc": "Full PL/EN/ES translations and hreflang."},
+      {"title": "Dark mode", "desc": "System-aware theme with a toggle."},
+      {"title": "A11y", "desc": "Accessible by default: aria, contrast, keyboard."}
+    ],
+    "changeLanguage": "Change language"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$499",
+        "period": "one-time",
+        "features": [
+          "One-page landing",
+          "i18n (PL/EN/ES)",
+          "Dark mode",
+          "Basic SEO"
+        ],
+        "cta": "Get started"
+      },
+      {
+        "name": "Pro",
+        "price": "$999",
+        "period": "one-time",
+        "features": [
+          "3–5 sections",
+          "Animations (Framer Motion)",
+          "Extended SEO + OG",
+          "Lighthouse monitoring"
+        ],
+        "cta": "Choose plan",
+        "highlight": true
+      },
+      {
+        "name": "Custom",
+        "price": "custom",
+        "features": [
+          "Custom website/app",
+          "Integrations & components",
+          "Launch support",
+          "Priority contact"
+        ],
+        "cta": "Let’s talk"
+      }
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {"q": "What’s the process?", "a": "Discovery → Design → Development → Launch. Iterative."},
+      {"q": "Can I edit content?", "a": "Yes, content lives in JSON files (i18n)."},
+      {"q": "Is there a backend?", "a": "In MVP we use Formspree or a simple email endpoint."},
+      {"q": "Is it fast?", "a": "Yes, we target green Core Web Vitals."},
+      {"q": "Analytics?", "a": "Yes, Plausible – lightweight and privacy-friendly."}
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "intro": "We offer two pillars: AI Assistants and Websites & Apps. Every project follows a clear path from discovery to launch.",
+    "ai": {
+      "title": "AI Assistants",
+      "points": [
+        "Automate repetitive work and support teams",
+        "Integrations with your tools (minimal in MVP)",
+        "Safe use of models – no sensitive data"
+      ]
+    },
+    "web": {
+      "title": "Websites & Apps",
+      "points": [
+        "Modern Next.js + Tailwind + shadcn/ui",
+        "i18n, dark mode and performance by default",
+        "SEO, OG and lightweight analytics (Plausible)"
+      ]
+    },
+    "process": {
+      "title": "Process",
+      "steps": [
+        {"name": "Discovery", "desc": "Goals, scope and priorities. Align on KPIs and roadmap."},
+        {"name": "Design", "desc": "Sections, content, UI components. Polish a11y and SEO."},
+        {"name": "Development", "desc": "Implementation, i18n, animations, smoke tests and Lighthouse."},
+        {"name": "Launch", "desc": "Deploy to Vercel, monitoring and feedback-driven iterations."}
+      ]
+    },
+    "cta": "Contact us"
+  }
+}
