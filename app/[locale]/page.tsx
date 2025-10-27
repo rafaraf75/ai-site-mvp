@@ -14,9 +14,15 @@ export default async function HomeLocale({
   params: Promise<{ locale: string }>;
 }) {
   const {locale} = await params;
-  const messages = (await import(`../../locales/${locale}.json`)).default as any;
-  const t = (key: string) =>
-    key.split(".").reduce((acc: any, k: string) => (acc ? acc[k] : undefined), messages);
+  const messages = (await import(`../../locales/${locale}.json`)).default as Record<string, unknown>;
+  const getFrom = (obj: unknown, path: string): unknown => {
+  return path.split('.').reduce<unknown>((acc, key) => {
+    if (acc && typeof acc === 'object' && key in (acc as Record<string, unknown>)) {
+      return (acc as Record<string, unknown>)[key];
+    }
+    return undefined;
+  }, obj);
+};const t = (key: string): string => { const v = getFrom(messages, key); return typeof v === 'string' ? v : String(v ?? ''); };
 
   return (
     <main className="">
@@ -73,3 +79,4 @@ export default async function HomeLocale({
     </main>
   );
 }
+

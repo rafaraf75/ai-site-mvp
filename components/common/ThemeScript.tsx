@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import Script from 'next/script';
 
 export default function ThemeScript() {
@@ -18,4 +19,5 @@ export default function ThemeScript() {
     </Script>
   );
 }
+
 

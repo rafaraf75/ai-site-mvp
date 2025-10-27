@@ -8,7 +8,7 @@ export default async function ServicesPage({
   params: Promise<{ locale: string }>;
 }) {
   const {locale} = await params;
-  const m = (await import(`../../../locales/${locale}.json`)).default as any;
+  const m = (await import(`../../../locales/${locale}.json`)).default as { services: { title:string; intro:string; ai:{ title:string; points:string[] }; web:{ title:string; points:string[] }; process:{ title:string; steps:{ name:string; desc:string }[] }; cta:string } };
 
   return (
     <div className="py-10 space-y-10">
@@ -93,3 +93,4 @@ export default async function ServicesPage({
     </div>
   );
 }
+

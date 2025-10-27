@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import {motion, useReducedMotion} from "framer-motion";
@@ -69,3 +70,4 @@ export default function Hero({title, subtitle, ctaDemo, ctaCall}: Props) {
     </section>
   );
 }
+
