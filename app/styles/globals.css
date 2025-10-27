@@ -1,0 +1,20 @@
+/* Tokeny kolorów i promieni w osobnym pliku */
+@import "./tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Slightly thicker borders in dark mode */
+.dark :is(.border, .border-b, .border-t, .border-l, .border-r) {
+  border-width: 1.5px !important;
+}

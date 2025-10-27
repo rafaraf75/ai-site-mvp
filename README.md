@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Site MVP
 
-## Getting Started
+Nowoczesny landing (Next.js App Router, TS, Tailwind, shadcn/ui) z i18n (PL/EN/ES), dark mode, animacjami, formularzem kontaktu i SEO.
 
-First, run the development server:
+## Wymagania
+- Node 18/20
+- npm
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Uruchomienie lokalne
+- Dev: `npm run dev` → http://localhost:3000 (redirect na `/pl`)
+- Build: `npm run build`
+- Start prod: `npm start`
+- E2E (Playwright): `npm run test:e2e`
+
+## i18n
+- Segment: `app/[locale]`
+- Dostępne: `pl`, `en`, `es`
+- Treści: `locales/*.json`
+
+## Środowisko (env)
+Utwórz `.env.local` i ustaw:
+
+```
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN=localhost
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+W produkcji ustaw `NEXT_PUBLIC_SITE_URL` na pełny adres (np. `https://twojadomena.pl`) i `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` na domenę śledzoną w Plausible.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## SEO
+- Konfiguracja: `lib/seo.ts`, `next-seo.config.ts`
+- `app/sitemap.ts` generuje sitemapę dla `/[locale]`, `/[locale]/services`, `/[locale]/contact` z alternates/hreflang
+- `app/robots.ts` wskazuje na `Sitemap: ${SITE_URL}/sitemap.xml`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Styl i UI
+- Tailwind v3, shadcn/ui (Button, Card, Input)
+- Tokeny motywu: `app/styles/tokens.css`
+- Dark mode: `next-themes` + `ThemeToggle` + skrypt no-flash (`ThemeScript`)
 
-## Learn More
+## Formularz kontaktu
+- Klient: `components/sections/ContactForm.tsx` (react-hook-form + zod)
+- Serwer: `app/api/contact/route.ts` (MVP – loguje dane; łatwy swap na Formspree/Nodemailer)
+- Analityka: `trackEvent('contact_sent')` (Plausible)
 
-To learn more about Next.js, take a look at the following resources:
+## Animacje
+- Framer Motion; wspólne warianty: `lib/motion.ts`
+- Respektuje `prefers-reduced-motion`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy na Vercel
+1) Połącz repo z Vercel (New Project → import z GitHub)
+2) Ustaw zmienne środowiskowe w Project Settings → Environment Variables:
+   - `NEXT_PUBLIC_SITE_URL` → `https://twoja-domena.pl`
+   - `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` → `twoja-domena.pl`
+3) Build & Output Settings: domyślne (Framework: Next.js, Build Command: `npm run build`)
+4) Deploy. Po starcie sprawdź:
+   - `/sitemap.xml` (z wpisami PL/EN/ES i hreflang)
+   - `/robots.txt` (Sitemap: …/sitemap.xml)
+   - Meta OG/Twitter w źródle `/pl`, `/en`, `/es`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## CI
+- `.github/workflows/ci.yml` – matrix (Ubuntu/Windows, Node 18/20), kroki: `npm ci` → `lint --max-warnings=0` → `build` → Playwright (instalacja przeglądarek) → upload artefaktów (`playwright-report`, `test-results`).
 
-## Deploy on Vercel
+## Konwencje
+- Brak `any`; logika w `lib/*`, komponenty w `components/*`
+- i18n: brak twardych stringów w komponentach; używamy `locales/*.json`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Struktura (skrót)
+- `app/[locale]/*` – strony i layout i18n
+- `components/common/*`, `components/sections/*`
+- `lib/*` – utils (seo, motion, validation, analytics)
+- `public/og-default.svg` – OG image 1200×630
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
