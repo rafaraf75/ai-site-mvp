@@ -60,7 +60,7 @@
     "plans": [
       {
         "name": "Starter",
-        "price": "$499",
+        "price": "€499",
         "period": "one-time",
         "features": [
           "One-page landing",
@@ -72,7 +72,7 @@
       },
       {
         "name": "Pro",
-        "price": "$999",
+        "price": "€999",
         "period": "one-time",
         "features": [
           "3–5 sections",
@@ -92,14 +92,14 @@
           "Launch support",
           "Priority contact"
         ],
-        "cta": "Let’s talk"
+        "cta": "Let's talk"
       }
     ]
   },
   "faq": {
     "title": "FAQ",
     "items": [
-      {"q": "What’s the process?", "a": "Discovery → Design → Development → Launch. Iterative."},
+      {"q": "What's the process?", "a": "Discovery → Design → Development → Launch. Iterative."},
       {"q": "Can I edit content?", "a": "Yes, content lives in JSON files (i18n)."},
       {"q": "Is there a backend?", "a": "In MVP we use Formspree or a simple email endpoint."},
       {"q": "Is it fast?", "a": "Yes, we target green Core Web Vitals."},
@@ -135,5 +135,15 @@
       ]
     },
     "cta": "Contact us"
+  },
+  "contactForm": {
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Describe your needs briefly",
+    "description": "Drop us a line and we'll get back to you.",
+    "submit": "Send message",
+    "success": "Sent. Thanks!",
+    "error": "Something went wrong. Please try again."
   }
 }

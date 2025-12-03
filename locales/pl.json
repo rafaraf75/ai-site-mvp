@@ -4,9 +4,9 @@
     "description": "Witamy w naszym MVP"
   },
   "cases": {
-    "title": "Mini-case’y",
+    "title": "Mini-case'y",
     "items": [
-      {"label": "Leadów w 30 dni", "value": "+120%", "desc": "Po wdrożeniu SEO + optymalizacji CWV."},
+      {"label": "Leady w 30 dni", "value": "+120%", "desc": "Po wdrożeniu SEO + optymalizacji CWV."},
       {"label": "Średni czas LCP", "value": "1.9s", "desc": "Mierzony na mobile (p95)."},
       {"label": "Konwersja kontaktów", "value": "+35%", "desc": "Dzięki jasnemu UVP i CTA."}
     ]
@@ -135,5 +135,15 @@
       ]
     },
     "cta": "Skontaktuj się z nami"
+  },
+  "contactForm": {
+    "nameLabel": "Imię",
+    "emailLabel": "E-mail",
+    "messageLabel": "Wiadomość",
+    "messagePlaceholder": "Opisz krótko potrzeby",
+    "description": "Napisz do nas, a wrócimy z odpowiedzią.",
+    "submit": "Wyślij",
+    "success": "Wysłano. Dzięki!",
+    "error": "Coś poszło nie tak. Spróbuj ponownie."
   }
 }

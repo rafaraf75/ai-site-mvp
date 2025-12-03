@@ -60,7 +60,7 @@
     "plans": [
       {
         "name": "Starter",
-        "price": "$499",
+        "price": "€499",
         "period": "único",
         "features": [
           "Landing de una página",
@@ -72,7 +72,7 @@
       },
       {
         "name": "Pro",
-        "price": "$999",
+        "price": "€999",
         "period": "único",
         "features": [
           "3–5 secciones",
@@ -135,5 +135,15 @@
       ]
     },
     "cta": "Contáctanos"
+  },
+  "contactForm": {
+    "nameLabel": "Nombre",
+    "emailLabel": "Correo electrónico",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Describe tus necesidades brevemente",
+    "description": "Escríbenos y te responderemos pronto.",
+    "submit": "Enviar mensaje",
+    "success": "Enviado. ¡Gracias!",
+    "error": "Algo salió mal. Inténtalo de nuevo."
   }
 }
