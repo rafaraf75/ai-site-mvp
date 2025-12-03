@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import {usePathname} from "next/navigation";
-import {useState} from "react";
-import {Button} from "@/components/ui/button";
-import ThemeToggle from "@/components/common/ThemeToggle";
-import LangSwitcher from "@/components/common/LangSwitcher";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import ThemeToggle from '@/components/common/ThemeToggle';
+import LangSwitcher from '@/components/common/LangSwitcher';
 
 type Labels = {
   home: string;
@@ -14,21 +14,28 @@ type Labels = {
 };
 
 function currentLocaleFromPath(pathname: string | null): string {
-  if (!pathname) return "pl";
+  if (!pathname) return 'pl';
   const m = pathname.match(/^\/(\w{2})(?:\b|\/)/);
-  return m?.[1] ?? "pl";
+  return m?.[1] ?? 'pl';
 }
 
-export default function Navbar({labels}: {labels: Labels}) {
+export default function Navbar({ labels }: { labels: Labels }) {
   const pathname = usePathname();
   const locale = currentLocaleFromPath(pathname);
   const [open, setOpen] = useState(false);
 
   const navLinks = [
-    {href: `/${locale}`, label: labels.home},
-    {href: `/${locale}/services`, label: labels.services},
-    {href: `/${locale}/contact`, label: labels.contact},
+    { href: `/${locale}`, label: labels.home, isRoot: true },
+    { href: `/${locale}/services`, label: labels.services, isRoot: false },
+    { href: `/${locale}/contact`, label: labels.contact, isRoot: false },
   ];
+
+  const currentPath = (pathname ?? '/').replace(/\/$/, '') || '/';
+  const isActive = (href: string, isRoot?: boolean) => {
+    const target = href.replace(/\/$/, '') || '/';
+    if (isRoot) return currentPath === target;
+    return currentPath === target || currentPath.startsWith(`${target}/`);
+  };
 
   return (
     <header className="border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -39,17 +46,28 @@ export default function Navbar({labels}: {labels: Labels}) {
       >
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href={`/${locale}`} className="font-semibold hover:opacity-80" aria-label="Logo">
-              AI Site
+            <Link
+              href={`/${locale}`}
+              className="font-semibold hover:opacity-80"
+              aria-label="RafLab"
+            >
+              RafLab
             </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-6">
-            {navLinks.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:underline underline-offset-4">
-                {l.label}
-              </Link>
-            ))}
+            {navLinks.map((l) => {
+              const active = isActive(l.href, l.isRoot);
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`hover:underline underline-offset-4 transition-colors ${active ? 'text-[hsl(var(--copper))]' : ''}`}
+                >
+                  {l.label}
+                </Link>
+              );
+            })}
             <LangSwitcher />
             <ThemeToggle />
           </div>
@@ -69,21 +87,21 @@ export default function Navbar({labels}: {labels: Labels}) {
           </div>
         </div>
 
-        <div
-          id="mobile-menu"
-          className={`md:hidden ${open ? "block" : "hidden"} pb-4 border-t`}
-        >
+        <div id="mobile-menu" className={`md:hidden ${open ? 'block' : 'hidden'} pb-4 border-t`}>
           <div className="flex flex-col gap-3 pt-3">
-            {navLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="px-1 py-1 hover:underline underline-offset-4"
-                onClick={() => setOpen(false)}
-              >
-                {l.label}
-              </Link>
-            ))}
+            {navLinks.map((l) => {
+              const active = isActive(l.href, l.isRoot);
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`px-1 py-1 hover:underline underline-offset-4 transition-colors ${active ? 'text-[hsl(var(--copper))]' : ''}`}
+                  onClick={() => setOpen(false)}
+                >
+                  {l.label}
+                </Link>
+              );
+            })}
             <ThemeToggle />
           </div>
         </div>
@@ -91,4 +109,3 @@ export default function Navbar({labels}: {labels: Labels}) {
     </header>
   );
 }
-
