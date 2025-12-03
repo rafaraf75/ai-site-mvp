@@ -19,8 +19,9 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
-        // redirect każdy path bez prefiksu języka na /pl/...
-        source: '/((?!pl|en|es).*)',
+        // redirect kazdy path bez prefiksu jezyka na /pl/... z wylaczeniem API i zasobow Next
+        source:
+          '/((?!api|_next/static|_next/image|_next/data|_next|pl|en|es|favicon.ico|robots.txt|sitemap.xml).*)',
         destination: '/pl/$1',
         permanent: false,
       },
