@@ -48,3 +48,4 @@ test-results/
 
 # backups
 package.json.bak
+*.code-search
