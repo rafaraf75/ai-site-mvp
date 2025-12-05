@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/common/ThemeToggle';
 import LangSwitcher from '@/components/common/LangSwitcher';
 
-type Labels = {
+export type NavLabels = {
   home: string;
   services: string;
   contact: string;
@@ -19,7 +19,7 @@ function currentLocaleFromPath(pathname: string | null): string {
   return m?.[1] ?? 'pl';
 }
 
-export default function Navbar({ labels }: { labels: Labels }) {
+export default function Navbar({ labels }: { labels: NavLabels }) {
   const pathname = usePathname();
   const locale = currentLocaleFromPath(pathname);
   const [open, setOpen] = useState(false);

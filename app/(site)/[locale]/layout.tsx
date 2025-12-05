@@ -1,24 +1,24 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import Script from 'next/script';
-import {ThemeProvider} from '@/components/common/ThemeProvider';
-import Navbar from '@/components/common/Navbar';
+import { ThemeProvider } from '@/components/common/ThemeProvider';
+import Navbar, { type NavLabels } from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
-import {LOCALES, SITE_NAME, SITE_URL, defaultOgImage} from '@/lib/seo';
+import { LOCALES, SITE_NAME, SITE_URL, defaultOgImage } from '@/lib/seo';
 import ThemeScript from '@/components/common/ThemeScript';
 import ChatWidget from '@/components/common/ChatWidget';
 
 export const locales = ['pl', 'en', 'es'] as const;
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
+  return locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const {locale} = await params;
+  const { locale } = await params;
   const languages = Object.fromEntries(LOCALES.map((l) => [l, `${SITE_URL}/${l}` as const]));
 
   return {
@@ -26,7 +26,7 @@ export async function generateMetadata({
       default: SITE_NAME,
       template: `%s | ${SITE_NAME}`,
     },
-    description: 'Nowoczesny landing z i18n, dark mode i swietnym SEO.',
+    description: 'Nowoczesny landing z i18n, dark mode i świetnym SEO.',
     alternates: {
       canonical: `${SITE_URL}/${locale}`,
       languages,
@@ -50,18 +50,21 @@ export async function generateMetadata({
   };
 }
 
+type Messages = {
+  nav: NavLabels;
+  footer: { rights: string; privacy: string; social: string };
+};
+
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
-  const {locale} = await params;
-  const messages = (await import(`@/locales/${locale}.json`)).default as {
-    nav: Record<string, string>;
-    footer: {rights: string; privacy: string; social: string};
-  };
+  const { locale } = await params;
+
+  const messages = (await import(`@/locales/${locale}.json`)).default as Messages;
 
   return (
     <>
@@ -77,7 +80,7 @@ export default async function LocaleLayout({
         href="#content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-primary-foreground px-3 py-2 rounded"
       >
-        Pomin do tresci
+        Pomiń do treści
       </a>
       <ThemeProvider>
         <Navbar labels={messages.nav} />
