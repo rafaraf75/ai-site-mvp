@@ -22,13 +22,13 @@ export default function Hero({title, subtitle, ctaDemo, ctaCall}: Props) {
   const fade = fadeUp(Boolean(reduce));
 
   return (
-    <section className="py-16 sm:py-24 text-center">
+    <section className="py-20 sm:py-28 text-center">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <motion.h1
           initial={mounted ? "hidden" : false}
           animate={mounted ? "show" : false}
           variants={fade}
-          className="text-3xl sm:text-5xl font-bold tracking-tight"
+          className="text-4xl sm:text-6xl font-semibold tracking-tight leading-[1.06] md:leading-[0.95]"
         >
           {title}
         </motion.h1>
@@ -37,7 +37,7 @@ export default function Hero({title, subtitle, ctaDemo, ctaCall}: Props) {
           animate={mounted ? "show" : false}
           variants={fade}
           transition={{delay: 0.15}}
-          className="mt-4 text-base sm:text-lg text-muted-foreground"
+          className="mt-5 text-base sm:text-lg text-muted-foreground leading-7 max-w-[60ch] mx-auto"
         >
           {subtitle}
         </motion.p>
@@ -47,7 +47,7 @@ export default function Hero({title, subtitle, ctaDemo, ctaCall}: Props) {
           animate={mounted ? "show" : false}
           variants={fade}
           transition={{delay: 0.3}}
-          className="mt-8 flex items-center justify-center gap-3"
+          className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button asChild size="lg" className="group">
             <Link href={ctaDemo.href} aria-label={ctaDemo.label}>
