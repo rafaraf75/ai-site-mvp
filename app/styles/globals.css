@@ -14,6 +14,21 @@
   }
 }
 
+@layer utilities {
+  .text-brand {
+    color: hsl(var(--copper));
+  }
+  .border-brand {
+    border-color: hsl(var(--copper));
+  }
+  .ring-brand {
+    --tw-ring-color: hsl(var(--copper));
+  }
+  .bg-brand-soft {
+    background-color: hsl(var(--copper) / 0.12);
+  }
+}
+
 /* Slightly thicker borders in dark mode */
 .dark :is(.border, .border-b, .border-t, .border-l, .border-r) {
   border-width: 1.5px !important;

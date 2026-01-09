@@ -62,7 +62,9 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`hover:underline underline-offset-4 transition-colors ${active ? 'text-[hsl(var(--copper))]' : ''}`}
+                  className={`relative pb-1 transition-colors after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-[hsl(var(--copper))]/60 after:transition-transform after:duration-200 hover:after:scale-x-100 ${
+                    active ? "text-foreground after:scale-x-100 after:bg-[hsl(var(--copper))]" : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {l.label}
                 </Link>
@@ -95,7 +97,7 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`px-1 py-1 hover:underline underline-offset-4 transition-colors ${active ? 'text-[hsl(var(--copper))]' : ''}`}
+                  className={`px-1 py-1 transition-colors ${active ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
                   onClick={() => setOpen(false)}
                 >
                   {l.label}
