@@ -8,69 +8,93 @@ import Testimonials from "@/components/sections/Testimonials";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 
+type BenefitItem = { title: string; desc: string };
+type ServicePreview = { title: string; desc: string };
+type CaseItem = { label: string; value: string; desc: string };
+type TestimonialItem = { quote: string; author: string; role: string };
+type PricingPlan = {
+  name: string;
+  price: string;
+  period?: string;
+  features: string[];
+  cta: string;
+  highlight?: boolean;
+};
+type FaqItem = { q: string; a: string };
+
+type Messages = {
+  home: {
+    heading: string;
+    subheading: string;
+    ctaDemo: string;
+    ctaCall: string;
+    benefitsTitle: string;
+    benefits: BenefitItem[];
+    changeLanguage: string;
+  };
+  servicesPreview: {
+    title: string;
+    cta: string;
+    ai: ServicePreview;
+    web: ServicePreview;
+  };
+  cases: { title: string; items: CaseItem[] };
+  testimonials: { title: string; items: TestimonialItem[] };
+  pricing: { title: string; plans: PricingPlan[] };
+  faq: { title: string; items: FaqItem[] };
+};
+
 export default async function HomeLocale({
   params,
 }: {
   params: Promise<{locale: string}>;
 }) {
   const {locale} = await params;
-  const messages = (await import(`@/locales/${locale}.json`)).default as Record<string, unknown>;
-  const getFrom = (obj: unknown, path: string): unknown => {
-    return path.split('.').reduce<unknown>((acc, key) => {
-      if (acc && typeof acc === 'object' && key in (acc as Record<string, unknown>)) {
-        return (acc as Record<string, unknown>)[key];
-      }
-      return undefined;
-    }, obj);
-  };
-  const t = (key: string): string => {
-    const v = getFrom(messages, key);
-    return typeof v === 'string' ? v : String(v ?? '');
-  };
+  const messages = (await import(`@/locales/${locale}.json`)).default as Messages;
 
   return (
     <main className="">
       <Hero
-        title={t("home.heading")}
-        subtitle={t("home.subheading")}
-        ctaDemo={{label: (messages as any).home.ctaDemo, href: `/${locale}/services`}}
-        ctaCall={{label: (messages as any).home.ctaCall, href: `/${locale}/contact`}}
+        title={messages.home.heading}
+        subtitle={messages.home.subheading}
+        ctaDemo={{label: messages.home.ctaDemo, href: `/${locale}/services`}}
+        ctaCall={{label: messages.home.ctaCall, href: `/${locale}/contact`}}
       />
 
-      <Benefits title={t("home.benefitsTitle") as string} items={(messages as any).home.benefits} />
+      <Benefits title={messages.home.benefitsTitle} items={messages.home.benefits} />
 
       <ServicesPreview
-        title={(messages as any).servicesPreview.title}
-        ctaLabel={(messages as any).servicesPreview.cta}
+        title={messages.servicesPreview.title}
+        ctaLabel={messages.servicesPreview.cta}
         cards={[
           {
-            title: (messages as any).servicesPreview.ai.title,
-            desc: (messages as any).servicesPreview.ai.desc,
+            title: messages.servicesPreview.ai.title,
+            desc: messages.servicesPreview.ai.desc,
             href: `/${locale}/services#ai`,
             icon: "bot",
           },
           {
-            title: (messages as any).servicesPreview.web.title,
-            desc: (messages as any).servicesPreview.web.desc,
+            title: messages.servicesPreview.web.title,
+            desc: messages.servicesPreview.web.desc,
             href: `/${locale}/services#web`,
             icon: "web",
           },
         ]}
       />
 
-      <Cases title={(messages as any).cases.title} items={(messages as any).cases.items} />
+      <Cases title={messages.cases.title} items={messages.cases.items} />
       <Testimonials
-        title={(messages as any).testimonials.title}
-        items={(messages as any).testimonials.items}
+        title={messages.testimonials.title}
+        items={messages.testimonials.items}
       />
 
-      <Pricing title={(messages as any).pricing.title} plans={(messages as any).pricing.plans} locale={locale} />
-      <FAQ title={(messages as any).faq.title} items={(messages as any).faq.items} />
+      <Pricing title={messages.pricing.title} plans={messages.pricing.plans} locale={locale} />
+      <FAQ title={messages.faq.title} items={messages.faq.items} />
 
       <section className="py-10 mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-col gap-3">
           <div>
-            <small>{t("home.changeLanguage") as string}:</small>
+            <small>{messages.home.changeLanguage}:</small>
             <div className="mt-2">
               <LangSwitcher />
             </div>
