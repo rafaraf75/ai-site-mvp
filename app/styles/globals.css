@@ -5,6 +5,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes wf-dashflow {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+@keyframes wf-nodepulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -27,9 +45,113 @@
   .bg-brand-soft {
     background-color: hsl(var(--copper) / 0.12);
   }
+
+  .hero-backdrop-2026 {
+    background-image:
+      radial-gradient(hsl(var(--muted-foreground) / 0.035) 0.5px, transparent 0.5px),
+      radial-gradient(70% 60% at 15% 35%, hsl(var(--foreground) / 0.04) 0%, transparent 70%),
+      radial-gradient(120% 80% at 50% 0%, transparent 0%, hsl(var(--foreground) / 0.06) 100%),
+      radial-gradient(80% 60% at 85% 10%, hsl(var(--copper) / 0.06), transparent 60%);
+    background-size: 8px 8px, auto, auto, auto;
+    mask-image: radial-gradient(90% 75% at 50% 35%, rgba(0, 0, 0, 0.7), transparent 85%);
+    opacity: 0.12;
+  }
+
+  .dark .hero-backdrop-2026 {
+    background-image:
+      radial-gradient(hsl(var(--muted-foreground) / 0.06) 0.5px, transparent 0.5px),
+      radial-gradient(70% 60% at 15% 35%, hsl(var(--copper) / 0.05) 0%, transparent 70%),
+      radial-gradient(120% 80% at 50% 0%, hsl(var(--foreground) / 0.06) 0%, transparent 70%),
+      radial-gradient(80% 60% at 15% 85%, hsl(var(--copper) / 0.05), transparent 60%);
+    background-size: 8px 8px, auto, auto, auto;
+    mask-image: radial-gradient(90% 75% at 50% 35%, rgba(0, 0, 0, 0.7), transparent 85%);
+    opacity: 0.16;
+  }
+
+  .hero-cinematic-2026 {
+    background-image:
+      linear-gradient(120deg, hsl(var(--foreground) / 0.04), transparent 35%, hsl(var(--foreground) / 0.03)),
+      radial-gradient(hsl(var(--foreground) / 0.04) 0.5px, transparent 0.5px);
+    background-size: auto, 6px 6px;
+    mask-image: radial-gradient(85% 80% at 50% 30%, rgba(0, 0, 0, 0.6), transparent 82%);
+    opacity: 0.08;
+  }
+
+  .dark .hero-cinematic-2026 {
+    opacity: 0.1;
+  }
+
+  .hero-title-3d {
+    text-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.35),
+      0 10px 30px rgba(0, 0, 0, 0.55),
+      0 2px 14px hsl(var(--copper) / 0.12);
+  }
+
+  .wf-card {
+    position: relative;
+  }
+
+  .wf-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid hsl(var(--foreground) / 0.08);
+    padding-bottom: 0.75rem;
+  }
+
+  .wf-chip {
+    position: absolute;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: hsl(var(--background) / 0.75);
+    border: 1px solid hsl(var(--foreground) / 0.08);
+    color: hsl(var(--muted-foreground) / 0.8);
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+  }
+
+  .wf-line {
+    stroke: hsl(var(--muted-foreground) / 0.45);
+    stroke-width: 1.2;
+    fill: none;
+  }
+
+  .wf-dash {
+    stroke: hsl(var(--copper) / 0.55);
+    stroke-width: 1.1;
+    stroke-dasharray: 6 10;
+    animation: wf-dashflow 10s linear infinite;
+  }
+
+  .wf-node {
+    fill: hsl(var(--background));
+    stroke: hsl(var(--muted-foreground) / 0.55);
+    stroke-width: 1.2;
+  }
+
+  .wf-node--primary {
+    stroke: hsl(var(--copper) / 0.85);
+    fill: hsl(var(--background));
+    animation: wf-nodepulse 3.6s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .wf-dot {
+    fill: hsl(var(--copper) / 0.75);
+  }
 }
 
 /* Slightly thicker borders in dark mode */
 .dark :is(.border, .border-b, .border-t, .border-l, .border-r) {
   border-width: 1.5px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wf-dash,
+  .wf-node--primary {
+    animation: none;
+  }
 }

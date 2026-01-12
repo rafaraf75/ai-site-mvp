@@ -22,13 +22,15 @@ export default function Hero({title, subtitle, ctaDemo, ctaCall}: Props) {
   const fade = fadeUp(Boolean(reduce));
 
   return (
-    <section className="py-20 sm:py-28 text-center">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+    <section className="relative overflow-hidden py-14 sm:py-16 lg:py-[72px] text-center">
+      <div className="pointer-events-none absolute inset-0 -z-10 hero-backdrop-2026" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 -z-10 hero-cinematic-2026" aria-hidden="true" />
+      <div className="mx-auto max-w-5xl w-full px-4 sm:px-6 relative z-10">
         <motion.h1
           initial={mounted ? "hidden" : false}
           animate={mounted ? "show" : false}
           variants={fade}
-          className="text-4xl sm:text-6xl font-semibold tracking-tight leading-[1.06] md:leading-[0.95]"
+          className="hero-title-3d text-4xl sm:text-6xl font-semibold tracking-tight leading-[1.06] md:leading-[0.95]"
         >
           {title}
         </motion.h1>
@@ -47,7 +49,7 @@ export default function Hero({title, subtitle, ctaDemo, ctaCall}: Props) {
           animate={mounted ? "show" : false}
           variants={fade}
           transition={{delay: 0.3}}
-          className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button asChild size="lg" className="group">
             <Link href={ctaDemo.href} aria-label={ctaDemo.label}>
