@@ -11,11 +11,21 @@ export default async function ContactPage({params}: {params: Promise<{locale: st
   };
 
   return (
-    <section className="py-8">
-      <h1 className="text-2xl font-semibold">{messages.contactPage.title}</h1>
-      <p className="text-muted-foreground mt-2 max-w-2xl">{messages.contactPage.description}</p>
-      <div className="mt-6">
-        <ContactForm locale={locale} messages={messages.contactForm} />
+    <section className="space-y-8 py-8">
+      <header className="contact-hero brand-shell">
+        <div className="max-w-3xl">
+          <p className="services-eyebrow">RafLab</p>
+          <h1 className="page-heading mt-3 text-2xl text-white md:text-3xl">
+            {messages.contactPage.title}
+          </h1>
+          <p className="services-hero-copy mt-3 max-w-2xl">{messages.contactPage.description}</p>
+        </div>
+      </header>
+
+      <div className="contact-shell max-w-4xl">
+        <div className="contact-form-panel">
+          <ContactForm locale={locale} messages={messages.contactForm} />
+        </div>
       </div>
     </section>
   );

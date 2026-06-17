@@ -54,64 +54,66 @@ export default function ContactForm({
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-xl">
-      <div>
-        <label className="block text-sm font-medium" htmlFor="name">
+    <form onSubmit={handleSubmit(onSubmit)} className="contact-form space-y-5">
+      <div className="contact-form-field">
+        <label className="mb-2 block text-sm font-semibold" htmlFor="name">
           {messages.nameLabel}
         </label>
         <Input
           id="name"
           data-testid="contact-name"
+          className="contact-form-input"
           placeholder={messages.namePlaceholder ?? 'Jan'}
           aria-invalid={!!errors.name}
           {...register('name')}
         />
         {errors.name?.message && (
-          <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
+          <p className="contact-form-error mt-1 text-sm">{errors.name.message}</p>
         )}
       </div>
-      <div>
-        <label className="block text-sm font-medium" htmlFor="email">
+      <div className="contact-form-field">
+        <label className="mb-2 block text-sm font-semibold" htmlFor="email">
           {messages.emailLabel}
         </label>
         <Input
           id="email"
           type="email"
           data-testid="contact-email"
+          className="contact-form-input"
           placeholder={messages.emailPlaceholder ?? 'jan@example.com'}
           aria-invalid={!!errors.email}
           {...register('email')}
         />
         {errors.email?.message && (
-          <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
+          <p className="contact-form-error mt-1 text-sm">{errors.email.message}</p>
         )}
       </div>
-      <div>
-        <label className="block text-sm font-medium" htmlFor="message">
+      <div className="contact-form-field">
+        <label className="mb-2 block text-sm font-semibold" htmlFor="message">
           {messages.messageLabel}
         </label>
         {messages.messageHint ? (
-          <p className="mt-1 text-sm text-muted-foreground">{messages.messageHint}</p>
+          <p className="contact-form-hint mb-2 text-sm">{messages.messageHint}</p>
         ) : null}
         <textarea
           id="message"
           data-testid="contact-message"
-          className="w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+          className="contact-form-textarea w-full rounded-md px-3 py-2 text-sm outline-none"
           rows={5}
           aria-invalid={!!errors.message}
           placeholder={messages.messagePlaceholder}
           {...register('message')}
         />
         {errors.message?.message && (
-          <p className="mt-1 text-sm text-destructive">{errors.message.message}</p>
+          <p className="contact-form-error mt-1 text-sm">{errors.message.message}</p>
         )}
       </div>
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3 pt-2">
         <Button type="submit" disabled={isSubmitting} data-testid="contact-submit">
           {isSubmitting ? '...' : messages.submit}
         </Button>
-        {sent === 'ok' && <span className="text-sm text-green-600">{messages.success}</span>}
-        {sent === 'err' && <span className="text-sm text-destructive">{messages.error}</span>}
+        {sent === 'ok' && <span className="contact-form-success text-sm">{messages.success}</span>}
+        {sent === 'err' && <span className="contact-form-error text-sm">{messages.error}</span>}
       </div>
     </form>
   );
