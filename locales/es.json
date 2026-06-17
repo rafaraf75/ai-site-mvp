@@ -6,17 +6,41 @@
   "cases": {
     "title": "Mini casos",
     "items": [
-      {"label": "Leads en 30 días", "value": "+120%", "desc": "Tras SEO + optimizaciones CWV."},
-      {"label": "LCP promedio", "value": "1.9s", "desc": "Medido en móvil (p95)."},
-      {"label": "Conversión de contacto", "value": "+35%", "desc": "UVP y CTA claros."}
+      {
+        "label": "Leads en 30 días",
+        "value": "+120%",
+        "desc": "Tras SEO + optimizaciones CWV."
+      },
+      {
+        "label": "LCP promedio",
+        "value": "1.9s",
+        "desc": "Medido en móvil (p95)."
+      },
+      {
+        "label": "Conversión de contacto",
+        "value": "+35%",
+        "desc": "UVP y CTA claros."
+      }
     ]
   },
   "testimonials": {
     "title": "Opiniones",
     "items": [
-      {"quote": "Entrega rápida y excelentes puntajes en Lighthouse.", "author": "Catalina", "role": "Líder de Marketing"},
-      {"quote": "i18n y modo oscuro funcionan perfecto.", "author": "Miguel", "role": "Product Manager"},
-      {"quote": "Formulario simple, más consultas.", "author": "Ana", "role": "Fundadora"}
+      {
+        "quote": "Entrega rápida y excelentes puntajes en Lighthouse.",
+        "author": "Catalina",
+        "role": "Líder de Marketing"
+      },
+      {
+        "quote": "i18n y modo oscuro funcionan perfecto.",
+        "author": "Miguel",
+        "role": "Product Manager"
+      },
+      {
+        "quote": "Formulario simple, más consultas.",
+        "author": "Ana",
+        "role": "Fundadora"
+      }
     ]
   },
   "servicesPreview": {
@@ -45,7 +69,11 @@
   "nav": {
     "home": "Inicio",
     "services": "Servicios",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "themeToggle": {
+      "toDark": "Cambiar al modo oscuro",
+      "toLight": "Cambiar al modo claro"
+    }
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
@@ -76,10 +104,22 @@
     "benefitsTitle": "¿Qué puede mejorar RafLab?",
     "benefitsSubtitle": "Me centro en cambios sencillos que ayudan a un pequeño negocio a transmitir más confianza online y recibir contactos de clientes con más facilidad.",
     "benefits": [
-      {"title": "Más contactos desde el móvil", "desc": "La web y el perfil de Google deben llevar al cliente directamente a una llamada, WhatsApp, teléfono o formulario."},
-      {"title": "Mejor presencia en Google", "desc": "Ayudo a ordenar la información básica, servicios, ubicación y enlaces para que el cliente entienda antes la oferta."},
-      {"title": "Menos caos en las consultas", "desc": "Los formularios y automatizaciones sencillas ayudan a recoger los datos del cliente en un solo lugar, sin perderlos entre mensajes."},
-      {"title": "Comunicación PL / ES / EN", "desc": "Una buena opción para negocios en España que atienden a polacos, españoles y clientes internacionales."}
+      {
+        "title": "Más contactos desde el móvil",
+        "desc": "La web y el perfil de Google deben llevar al cliente directamente a una llamada, WhatsApp, teléfono o formulario."
+      },
+      {
+        "title": "Mejor presencia en Google",
+        "desc": "Ayudo a ordenar la información básica, servicios, ubicación y enlaces para que el cliente entienda antes la oferta."
+      },
+      {
+        "title": "Menos caos en las consultas",
+        "desc": "Los formularios y automatizaciones sencillas ayudan a recoger los datos del cliente en un solo lugar, sin perderlos entre mensajes."
+      },
+      {
+        "title": "Comunicación PL / ES / EN",
+        "desc": "Una buena opción para negocios en España que atienden a polacos, españoles y clientes internacionales."
+      }
     ],
     "projectStatus": {
       "eyebrow": "Cómo empezamos",
@@ -148,43 +188,85 @@
   "faq": {
     "title": "Preguntas frecuentes",
     "items": [
-      {"q": "¿La mini-auditoría es realmente gratuita?", "a": "Sí. Es una revisión breve y gratuita de tu web, perfil de Google o presencia online. Recibirás algunas sugerencias concretas sin compromiso."},
-      {"q": "¿RafLab ya es una actividad oficial?", "a": "El proyecto está en fase de preparación y validación. Actualmente estoy hablando con negocios locales para entender qué problemas merece la pena resolver primero."},
-      {"q": "¿Para quién es esta ayuda?", "a": "Para pequeños negocios, autónomos, servicios locales, negocios polacos en España y empresas que quieren mejorar su web, Google, WhatsApp, formularios o una reserva online sencilla."},
-      {"q": "¿Necesito tener ya una página web?", "a": "No. Puedes enviar un perfil de Google, Facebook, Instagram o una breve descripción del negocio. La mini-auditoría puede empezar con lo que ya tienes."},
-      {"q": "¿En qué idiomas podemos comunicarnos?", "a": "Podemos comunicarnos en polaco e inglés. Los textos en español los preparo con cuidado y revisión para que suenen naturales y claros."},
-      {"q": "¿Qué pasa después de la mini-auditoría?", "a": "Recibes observaciones concretas. Si tiene sentido para ambas partes, después podemos hablar de una posible solución o presupuesto, una vez aclaradas las cuestiones formales."}
+      {
+        "q": "¿La mini-auditoría es realmente gratuita?",
+        "a": "Sí. Es una revisión breve y gratuita de tu web, perfil de Google o presencia online. Recibirás algunas sugerencias concretas sin compromiso."
+      },
+      {
+        "q": "¿Para quién es esta ayuda?",
+        "a": "Para pequeños negocios, autónomos, servicios locales, negocios polacos en España y empresas que quieren mejorar su web, Google, WhatsApp, formularios o una reserva online sencilla."
+      },
+      {
+        "q": "¿Necesito tener ya una página web?",
+        "a": "No. Puedes enviar un perfil de Google, Facebook, Instagram o una breve descripción del negocio. La mini-auditoría puede empezar con lo que ya tienes."
+      },
+      {
+        "q": "¿En qué idiomas podemos comunicarnos?",
+        "a": "Podemos comunicarnos en polaco e inglés. Los textos en español los preparo con cuidado y revisión para que suenen naturales y claros."
+      },
+      {
+        "q": "¿Qué pasa después de la mini-auditoría?",
+        "a": "Recibes observaciones concretas. Si tiene sentido para ambas partes, después podemos hablar de una posible solución o presupuesto, una vez aclaradas las cuestiones formales."
+      }
     ]
   },
   "services": {
-    "title": "Servicios",
-    "intro": "Ofrecemos dos pilares: Asistentes de IA y Sitios/Apps. Cada proyecto sigue un camino claro desde discovery hasta el lanzamiento.",
-    "ai": {
-      "title": "Asistentes de IA",
-      "points": [
-        "Automatizar tareas repetitivas y apoyar al equipo",
-        "Integraciones con tus herramientas (mínimas en el MVP)",
-        "Uso seguro de modelos – sin datos sensibles"
+    "hero": {
+      "title": "Servicios digitales para pequeños negocios",
+      "description": "Ayudo a negocios locales en España a mejorar su presencia online y el contacto con clientes mediante una web, perfil de Google, WhatsApp, formularios, reservas y automatizaciones sencillas.",
+      "cta": "Empezar con una mini-auditoría"
+    },
+    "areas": {
+      "title": "¿En qué puedo ayudar?",
+      "items": [
+        {
+          "title": "Web para negocio local",
+          "description": "Una web sencilla y rápida con servicios, ubicación, Google Maps, WhatsApp y formulario de contacto."
+        },
+        {
+          "title": "Google y visibilidad local",
+          "description": "Ordenar la información, servicios, enlaces y el camino básico de contacto desde el perfil de Google."
+        },
+        {
+          "title": "WhatsApp y contacto rápido",
+          "description": "Facilitar que el cliente pase de encontrar el negocio a escribir, llamar o enviar una consulta."
+        },
+        {
+          "title": "Formularios y reservas",
+          "description": "Un formulario sencillo de consulta o reserva que recoge los datos importantes de forma ordenada."
+        },
+        {
+          "title": "Automatizaciones sencillas",
+          "description": "Conectar formulario, email, hoja de cálculo o notificaciones para hacer menos tareas manuales."
+        },
+        {
+          "title": "Comunicación PL / ES / EN",
+          "description": "Ayuda con la web y la comunicación para negocios en España que atienden a polacos, españoles y clientes internacionales."
+        }
       ]
     },
-    "web": {
-      "title": "Sitios y Aplicaciones",
-      "points": [
-        "Next.js moderno + Tailwind + shadcn/ui",
-        "i18n, modo oscuro y rendimiento por defecto",
-        "SEO, OG y analítica ligera (Plausible)"
-      ]
-    },
-    "process": {
-      "title": "Proceso",
+    "start": {
+      "title": "¿Cómo empezamos?",
       "steps": [
-        {"name": "Discovery", "desc": "Objetivos, alcance y prioridades. Alinear KPIs y roadmap."},
-        {"name": "Design", "desc": "Secciones, contenido, componentes UI. Pulido de a11y y SEO."},
-        {"name": "Development", "desc": "Implementación, i18n, animaciones, smoke tests y Lighthouse."},
-        {"name": "Launch", "desc": "Deploy a Vercel, monitoreo e iteraciones por feedback."}
+        {
+          "title": "Mini-auditoría",
+          "description": "Primero revisamos la web, perfil de Google o una breve descripción del negocio."
+        },
+        {
+          "title": "El problema principal",
+          "description": "Elegimos qué bloquea más el contacto con clientes: visibilidad, WhatsApp, formulario, reservas o caos entre mensajes."
+        },
+        {
+          "title": "Una mejora pequeña y concreta",
+          "description": "Si tiene sentido, hablamos de una mejora sencilla o una pequeña implementación sin forzar un proyecto grande."
+        }
       ]
     },
-    "cta": "Contáctanos"
+    "finalCta": {
+      "title": "¿No sabes por dónde empezar?",
+      "description": "Envía el enlace de tu web, perfil de Google o una breve descripción del negocio. Empezamos con una mini-auditoría y vemos qué merece la pena mejorar.",
+      "cta": "Solicitar mini-auditoría"
+    }
   },
   "contactPage": {
     "title": "Envía tu web, perfil de Google o describe el problema",

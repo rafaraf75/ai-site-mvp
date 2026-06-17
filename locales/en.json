@@ -6,17 +6,41 @@
   "cases": {
     "title": "Mini case studies",
     "items": [
-      {"label": "Leads in 30 days", "value": "+120%", "desc": "After SEO + CWV optimizations."},
-      {"label": "Avg LCP", "value": "1.9s", "desc": "Measured on mobile (p95)."},
-      {"label": "Contact conversion", "value": "+35%", "desc": "Clear UVP and CTA."}
+      {
+        "label": "Leads in 30 days",
+        "value": "+120%",
+        "desc": "After SEO + CWV optimizations."
+      },
+      {
+        "label": "Avg LCP",
+        "value": "1.9s",
+        "desc": "Measured on mobile (p95)."
+      },
+      {
+        "label": "Contact conversion",
+        "value": "+35%",
+        "desc": "Clear UVP and CTA."
+      }
     ]
   },
   "testimonials": {
     "title": "Testimonials",
     "items": [
-      {"quote": "Fast delivery and great Lighthouse scores.", "author": "Kate", "role": "Marketing Lead"},
-      {"quote": "i18n and dark mode just work.", "author": "Michael", "role": "Product Manager"},
-      {"quote": "Simple form, more inquiries.", "author": "Anna", "role": "Founder"}
+      {
+        "quote": "Fast delivery and great Lighthouse scores.",
+        "author": "Kate",
+        "role": "Marketing Lead"
+      },
+      {
+        "quote": "i18n and dark mode just work.",
+        "author": "Michael",
+        "role": "Product Manager"
+      },
+      {
+        "quote": "Simple form, more inquiries.",
+        "author": "Anna",
+        "role": "Founder"
+      }
     ]
   },
   "servicesPreview": {
@@ -45,7 +69,11 @@
   "nav": {
     "home": "Home",
     "services": "Services",
-    "contact": "Contact"
+    "contact": "Contact",
+    "themeToggle": {
+      "toDark": "Switch to dark mode",
+      "toLight": "Switch to light mode"
+    }
   },
   "footer": {
     "rights": "All rights reserved.",
@@ -76,10 +104,22 @@
     "benefitsTitle": "What can RafLab improve?",
     "benefitsSubtitle": "I focus on simple changes that help a small business look more trustworthy online and receive customer enquiries more easily.",
     "benefits": [
-      {"title": "More contacts from mobile", "desc": "Your website and Google profile should guide customers directly to a conversation, WhatsApp, phone call or form."},
-      {"title": "Better Google presence", "desc": "I help organise basic information, services, location and links so customers understand your offer faster."},
-      {"title": "Less enquiry chaos", "desc": "Forms and simple automations help collect customer details in one place instead of losing them across messages."},
-      {"title": "PL / ES / EN communication", "desc": "Useful for businesses in Spain that serve Polish, Spanish and international customers."}
+      {
+        "title": "More contacts from mobile",
+        "desc": "Your website and Google profile should guide customers directly to a conversation, WhatsApp, phone call or form."
+      },
+      {
+        "title": "Better Google presence",
+        "desc": "I help organise basic information, services, location and links so customers understand your offer faster."
+      },
+      {
+        "title": "Less enquiry chaos",
+        "desc": "Forms and simple automations help collect customer details in one place instead of losing them across messages."
+      },
+      {
+        "title": "PL / ES / EN communication",
+        "desc": "Useful for businesses in Spain that serve Polish, Spanish and international customers."
+      }
     ],
     "projectStatus": {
       "eyebrow": "How we start",
@@ -148,43 +188,85 @@
   "faq": {
     "title": "Frequently asked questions",
     "items": [
-      {"q": "Is the mini-audit really free?", "a": "Yes. It is a short, free review of your website, Google profile or online presence. You will receive a few concrete suggestions with no obligation."},
-      {"q": "Is RafLab already an official business?", "a": "The project is currently in preparation and validation. I am talking with local businesses to understand which problems are worth solving first."},
-      {"q": "Who is this for?", "a": "For small businesses, autónomos, local service providers, Polish businesses in Spain and companies that want to improve their website, Google, WhatsApp, forms or simple online booking."},
-      {"q": "Do I need to already have a website?", "a": "No. You can send a Google profile, Facebook, Instagram or a short description of the business. The mini-audit can start with what you already have."},
-      {"q": "Which languages can we use?", "a": "We can communicate in Polish and English. Spanish content is prepared carefully and checked so it sounds clear and natural."},
-      {"q": "What happens after the mini-audit?", "a": "You receive concrete feedback. If it makes sense for both sides, we can later discuss a possible solution or estimate once the formal details are clarified."}
+      {
+        "q": "Is the mini-audit really free?",
+        "a": "Yes. It is a short, free review of your website, Google profile or online presence. You will receive a few concrete suggestions with no obligation."
+      },
+      {
+        "q": "Who is this for?",
+        "a": "For small businesses, autónomos, local service providers, Polish businesses in Spain and companies that want to improve their website, Google, WhatsApp, forms or simple online booking."
+      },
+      {
+        "q": "Do I need to already have a website?",
+        "a": "No. You can send a Google profile, Facebook, Instagram or a short description of the business. The mini-audit can start with what you already have."
+      },
+      {
+        "q": "Which languages can we use?",
+        "a": "We can communicate in Polish and English. Spanish content is prepared carefully and checked so it sounds clear and natural."
+      },
+      {
+        "q": "What happens after the mini-audit?",
+        "a": "You receive concrete feedback. If it makes sense for both sides, we can later discuss a possible solution or estimate once the formal details are clarified."
+      }
     ]
   },
   "services": {
-    "title": "Services",
-    "intro": "We offer two pillars: AI Assistants and Websites & Apps. Every project follows a clear path from discovery to launch.",
-    "ai": {
-      "title": "AI Assistants",
-      "points": [
-        "Automate repetitive work and support teams",
-        "Integrations with your tools (minimal in MVP)",
-        "Safe use of models – no sensitive data"
+    "hero": {
+      "title": "Digital services for small businesses",
+      "description": "I help local businesses in Spain improve their online presence and customer contact through a website, Google profile, WhatsApp, forms, bookings and simple automations.",
+      "cta": "Start with a mini-audit"
+    },
+    "areas": {
+      "title": "How can I help?",
+      "items": [
+        {
+          "title": "Local business website",
+          "description": "A simple, fast website with services, location, Google Maps, WhatsApp and a contact form."
+        },
+        {
+          "title": "Google and local visibility",
+          "description": "Organising information, services, links and the basic contact path from the Google profile."
+        },
+        {
+          "title": "WhatsApp and quick contact",
+          "description": "Making it easier for customers to go from finding the business to messaging, calling or sending an enquiry."
+        },
+        {
+          "title": "Forms and bookings",
+          "description": "A simple enquiry or booking form that collects the important details in an organised way."
+        },
+        {
+          "title": "Simple automations",
+          "description": "Connecting a form, email, spreadsheet or notifications so fewer things need to be done manually."
+        },
+        {
+          "title": "PL / ES / EN communication",
+          "description": "Help with website and communication for businesses in Spain serving Polish, Spanish and international customers."
+        }
       ]
     },
-    "web": {
-      "title": "Websites & Apps",
-      "points": [
-        "Modern Next.js + Tailwind + shadcn/ui",
-        "i18n, dark mode and performance by default",
-        "SEO, OG and lightweight analytics (Plausible)"
-      ]
-    },
-    "process": {
-      "title": "Process",
+    "start": {
+      "title": "How do we start?",
       "steps": [
-        {"name": "Discovery", "desc": "Goals, scope and priorities. Align on KPIs and roadmap."},
-        {"name": "Design", "desc": "Sections, content, UI components. Polish a11y and SEO."},
-        {"name": "Development", "desc": "Implementation, i18n, animations, smoke tests and Lighthouse."},
-        {"name": "Launch", "desc": "Deploy to Vercel, monitoring and feedback-driven iterations."}
+        {
+          "title": "Mini-audit",
+          "description": "First we review the website, Google profile or a short description of the business."
+        },
+        {
+          "title": "The main problem",
+          "description": "We choose what blocks customer contact the most: visibility, WhatsApp, forms, bookings or message chaos."
+        },
+        {
+          "title": "A small concrete improvement",
+          "description": "If it makes sense, we discuss a simple improvement or small implementation without forcing a large project."
+        }
       ]
     },
-    "cta": "Contact us"
+    "finalCta": {
+      "title": "Not sure where to start?",
+      "description": "Send your website, Google profile or a short description of the business. We start with a mini-audit and see what is really worth improving.",
+      "cta": "Request a mini-audit"
+    }
   },
   "contactPage": {
     "title": "Send your website, Google profile or describe the problem",

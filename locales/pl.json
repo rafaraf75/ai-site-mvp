@@ -6,17 +6,41 @@
   "cases": {
     "title": "Mini-case'y",
     "items": [
-      {"label": "Leady w 30 dni", "value": "+120%", "desc": "Po wdrożeniu SEO + optymalizacji CWV."},
-      {"label": "Średni czas LCP", "value": "1.9s", "desc": "Mierzony na mobile (p95)."},
-      {"label": "Konwersja kontaktów", "value": "+35%", "desc": "Dzięki jasnemu UVP i CTA."}
+      {
+        "label": "Leady w 30 dni",
+        "value": "+120%",
+        "desc": "Po wdrożeniu SEO + optymalizacji CWV."
+      },
+      {
+        "label": "Średni czas LCP",
+        "value": "1.9s",
+        "desc": "Mierzony na mobile (p95)."
+      },
+      {
+        "label": "Konwersja kontaktów",
+        "value": "+35%",
+        "desc": "Dzięki jasnemu UVP i CTA."
+      }
     ]
   },
   "testimonials": {
     "title": "Opinie",
     "items": [
-      {"quote": "Szybkie wdrożenie i świetne wyniki w Lighthouse.", "author": "Katarzyna", "role": "Marketing Lead"},
-      {"quote": "i18n i dark mode po prostu działają.", "author": "Michał", "role": "Product Manager"},
-      {"quote": "Prosty formularz, a liczba zapytań wzrosła.", "author": "Anna", "role": "Founder"}
+      {
+        "quote": "Szybkie wdrożenie i świetne wyniki w Lighthouse.",
+        "author": "Katarzyna",
+        "role": "Marketing Lead"
+      },
+      {
+        "quote": "i18n i dark mode po prostu działają.",
+        "author": "Michał",
+        "role": "Product Manager"
+      },
+      {
+        "quote": "Prosty formularz, a liczba zapytań wzrosła.",
+        "author": "Anna",
+        "role": "Founder"
+      }
     ]
   },
   "servicesPreview": {
@@ -45,7 +69,11 @@
   "nav": {
     "home": "Start",
     "services": "Usługi",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "themeToggle": {
+      "toDark": "Przełącz na tryb ciemny",
+      "toLight": "Przełącz na tryb jasny"
+    }
   },
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone.",
@@ -76,10 +104,22 @@
     "benefitsTitle": "Co może poprawić RafLab?",
     "benefitsSubtitle": "Skupiam się na prostych zmianach, które pomagają małej firmie wyglądać wiarygodniej online i szybciej zdobywać zapytania od klientów.",
     "benefits": [
-      {"title": "Więcej kontaktów z telefonu", "desc": "Strona i profil Google powinny prowadzić klienta prosto do rozmowy, WhatsAppa, telefonu albo formularza."},
-      {"title": "Lepsza obecność w Google", "desc": "Pomagam uporządkować podstawowe informacje, usługi, lokalizację i linki, żeby klient szybciej zrozumiał ofertę."},
-      {"title": "Mniej chaosu w zapytaniach", "desc": "Formularze i proste automatyzacje pomagają zbierać dane klienta w jednym miejscu zamiast gubić je w wiadomościach."},
-      {"title": "Komunikacja PL / ES / EN", "desc": "To dobre rozwiązanie dla firm w Hiszpanii, które obsługują Polaków, Hiszpanów i klientów zagranicznych."}
+      {
+        "title": "Więcej kontaktów z telefonu",
+        "desc": "Strona i profil Google powinny prowadzić klienta prosto do rozmowy, WhatsAppa, telefonu albo formularza."
+      },
+      {
+        "title": "Lepsza obecność w Google",
+        "desc": "Pomagam uporządkować podstawowe informacje, usługi, lokalizację i linki, żeby klient szybciej zrozumiał ofertę."
+      },
+      {
+        "title": "Mniej chaosu w zapytaniach",
+        "desc": "Formularze i proste automatyzacje pomagają zbierać dane klienta w jednym miejscu zamiast gubić je w wiadomościach."
+      },
+      {
+        "title": "Komunikacja PL / ES / EN",
+        "desc": "To dobre rozwiązanie dla firm w Hiszpanii, które obsługują Polaków, Hiszpanów i klientów zagranicznych."
+      }
     ],
     "projectStatus": {
       "eyebrow": "Jak zaczynamy",
@@ -148,43 +188,85 @@
   "faq": {
     "title": "Najczęstsze pytania",
     "items": [
-      {"q": "Czy mini-audyt jest naprawdę bezpłatny?", "a": "Tak. To krótka, bezpłatna analiza strony, profilu Google albo obecności online. Otrzymasz kilka konkretnych sugestii bez zobowiązań."},
-      {"q": "Czy RafLab jest już oficjalną działalnością?", "a": "Projekt jest w fazie przygotowania i walidacji. Obecnie prowadzę rozmowy z lokalnymi firmami i sprawdzam, jakie problemy warto rozwiązywać w pierwszej kolejności."},
-      {"q": "Dla kogo jest ta pomoc?", "a": "Dla małych firm, autónomos, lokalnych usługodawców, polskich firm w Hiszpanii oraz firm, które chcą poprawić stronę, Google, WhatsApp, formularze lub prostą rezerwację online."},
-      {"q": "Czy muszę mieć już stronę internetową?", "a": "Nie. Możesz wysłać profil Google, Facebook, Instagram albo krótki opis firmy. Mini-audyt może zacząć się od tego, co już masz."},
-      {"q": "W jakich językach możemy rozmawiać?", "a": "Możemy komunikować się po polsku i angielsku, a treści po hiszpańsku przygotowuję z dużą ostrożnością i weryfikacją."},
-      {"q": "Co dzieje się po mini-audycie?", "a": "Dostajesz konkretne uwagi. Jeśli będzie sens i chęć po obu stronach, można później porozmawiać o możliwym rozwiązaniu lub wycenie po uporządkowaniu formalności."}
+      {
+        "q": "Czy mini-audyt jest naprawdę bezpłatny?",
+        "a": "Tak. To krótka, bezpłatna analiza strony, profilu Google albo obecności online. Otrzymasz kilka konkretnych sugestii bez zobowiązań."
+      },
+      {
+        "q": "Dla kogo jest ta pomoc?",
+        "a": "Dla małych firm, autónomos, lokalnych usługodawców, polskich firm w Hiszpanii oraz firm, które chcą poprawić stronę, Google, WhatsApp, formularze lub prostą rezerwację online."
+      },
+      {
+        "q": "Czy muszę mieć już stronę internetową?",
+        "a": "Nie. Możesz wysłać profil Google, Facebook, Instagram albo krótki opis firmy. Mini-audyt może zacząć się od tego, co już masz."
+      },
+      {
+        "q": "W jakich językach możemy rozmawiać?",
+        "a": "Możemy komunikować się po polsku i angielsku, a treści po hiszpańsku przygotowuję z dużą ostrożnością i weryfikacją."
+      },
+      {
+        "q": "Co dzieje się po mini-audycie?",
+        "a": "Dostajesz konkretne uwagi. Jeśli będzie sens i chęć po obu stronach, można później porozmawiać o możliwym rozwiązaniu lub wycenie po uporządkowaniu formalności."
+      }
     ]
   },
   "services": {
-    "title": "Usługi",
-    "intro": "Oferujemy dwa filary: Asystenci AI oraz Strony & Serwisy. Każdy projekt prowadzimy przejrzyście – od discovery po launch.",
-    "ai": {
-      "title": "Asystenci AI",
-      "points": [
-        "Automatyzacja powtarzalnych zadań i wsparcie zespołu",
-        "Integracje z narzędziami (w MVP minimalne)",
-        "Bezpieczne korzystanie z modeli – bez wrażliwych danych"
+    "hero": {
+      "title": "Usługi cyfrowe dla małych firm",
+      "description": "Pomagam lokalnym firmom w Hiszpanii poprawić obecność online i kontakt z klientami przez stronę internetową, profil Google, WhatsApp, formularze, rezerwacje i proste automatyzacje.",
+      "cta": "Zacznij od mini-audytu"
+    },
+    "areas": {
+      "title": "W czym mogę pomóc?",
+      "items": [
+        {
+          "title": "Strona lokalnej firmy",
+          "description": "Prosta, szybka strona z opisem usług, lokalizacją, Google Maps, WhatsApp i formularzem kontaktowym."
+        },
+        {
+          "title": "Google i widoczność lokalna",
+          "description": "Uporządkowanie informacji, usług, linków i podstawowej ścieżki kontaktu z profilu Google."
+        },
+        {
+          "title": "WhatsApp i szybki kontakt",
+          "description": "Ułatwienie klientowi przejścia od znalezienia firmy do rozmowy, telefonu albo wysłania zapytania."
+        },
+        {
+          "title": "Formularze i rezerwacje",
+          "description": "Prosty formularz zapytania lub rezerwacji, który zbiera najważniejsze dane w uporządkowany sposób."
+        },
+        {
+          "title": "Proste automatyzacje",
+          "description": "Połączenie formularza, e-maila, arkusza lub powiadomień, żeby mniej rzeczy robić ręcznie."
+        },
+        {
+          "title": "Komunikacja PL / ES / EN",
+          "description": "Pomoc przy stronie i komunikacji dla firm w Hiszpanii obsługujących Polaków, Hiszpanów i klientów zagranicznych."
+        }
       ]
     },
-    "web": {
-      "title": "Strony i Serwisy",
-      "points": [
-        "Nowoczesny Next.js + Tailwind + shadcn/ui",
-        "i18n, dark mode i wydajność w standardzie",
-        "SEO, OG i lekka analityka (Plausible)"
-      ]
-    },
-    "process": {
-      "title": "Proces",
+    "start": {
+      "title": "Jak zaczynamy?",
       "steps": [
-        {"name": "Discovery", "desc": "Cel, zakres i priorytety. Uzgadniamy KPI i mapę drogową."},
-        {"name": "Design", "desc": "Układ sekcji, treści, komponenty UI. Polishing a11y i SEO."},
-        {"name": "Development", "desc": "Implementacja, i18n, animacje, testy smoke i Lighthouse."},
-        {"name": "Launch", "desc": "Deploy na Vercel, monitoring, iteracje po feedbacku."}
+        {
+          "title": "Mini-audyt",
+          "description": "Najpierw sprawdzamy stronę, profil Google albo krótki opis firmy."
+        },
+        {
+          "title": "Najważniejszy problem",
+          "description": "Wybieramy, co najbardziej blokuje kontakt z klientami: widoczność, WhatsApp, formularz, rezerwacje albo chaos w wiadomościach."
+        },
+        {
+          "title": "Małe konkretne wdrożenie",
+          "description": "Jeśli ma sens, omawiamy prostą poprawkę lub małe wdrożenie bez budowania dużego projektu na siłę."
+        }
       ]
     },
-    "cta": "Skontaktuj się z nami"
+    "finalCta": {
+      "title": "Nie wiesz, od czego zacząć?",
+      "description": "Wyślij link do strony, profilu Google albo krótki opis firmy. Zaczniemy od mini-audytu i zobaczymy, co naprawdę warto poprawić.",
+      "cta": "Poproś o mini-audyt"
+    }
   },
   "contactPage": {
     "title": "Wyślij stronę, profil Google albo opisz problem",
