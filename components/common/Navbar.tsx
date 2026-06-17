@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/common/ThemeToggle';
-import LangSwitcher from '@/components/common/LangSwitcher';
+import { LangSwitcherWithTestIds } from '@/components/common/LangSwitcher';
 
 export type NavLabels = {
   home: string;
@@ -17,6 +17,18 @@ function currentLocaleFromPath(pathname: string | null): string {
   if (!pathname) return 'pl';
   const m = pathname.match(/^\/(\w{2})(?:\b|\/)/);
   return m?.[1] ?? 'pl';
+}
+
+function navTestId(href: string, isRoot?: boolean) {
+  if (isRoot) return 'nav-home-link';
+  if (href.endsWith('/services')) return 'nav-services-link';
+  return 'nav-contact-link';
+}
+
+function mobileNavTestId(href: string, isRoot?: boolean) {
+  if (isRoot) return 'nav-mobile-home-link';
+  if (href.endsWith('/services')) return 'nav-mobile-services-link';
+  return 'nav-mobile-contact-link';
 }
 
 export default function Navbar({ labels }: { labels: NavLabels }) {
@@ -40,6 +52,7 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
   return (
     <header className="border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav
+        data-testid="site-navbar"
         className="mx-auto max-w-6xl px-4 sm:px-6"
         role="navigation"
         aria-label="Główna nawigacja"
@@ -48,6 +61,7 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
           <div className="flex items-center gap-3">
             <Link
               href={`/${locale}`}
+              data-testid="nav-brand-link"
               className="font-semibold hover:opacity-80"
               aria-label="RafLab"
             >
@@ -55,27 +69,28 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6" data-testid="site-navbar-desktop">
             {navLinks.map((l) => {
               const active = isActive(l.href, l.isRoot);
               return (
                 <Link
                   key={l.href}
                   href={l.href}
+                  data-testid={navTestId(l.href, l.isRoot)}
                   className={`relative pb-1 transition-colors after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-[hsl(var(--copper))]/60 after:transition-transform after:duration-200 hover:after:scale-x-100 ${
-                    active ? "text-foreground after:scale-x-100 after:bg-[hsl(var(--copper))]" : "text-muted-foreground hover:text-foreground"
+                    active ? 'text-foreground after:scale-x-100 after:bg-[hsl(var(--copper))]' : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   {l.label}
                 </Link>
               );
             })}
-            <LangSwitcher />
+            <LangSwitcherWithTestIds testIdPrefix="nav-lang" />
             <ThemeToggle />
           </div>
 
-          <div className="md:hidden flex items-center gap-2">
-            <LangSwitcher />
+          <div className="md:hidden flex items-center gap-2" data-testid="site-navbar-mobile">
+            <LangSwitcherWithTestIds testIdPrefix="nav-mobile-lang" />
             <Button
               variant="outline"
               size="sm"
@@ -97,7 +112,8 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`px-1 py-1 transition-colors ${active ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                  data-testid={mobileNavTestId(l.href, l.isRoot)}
+                  className={`px-1 py-1 transition-colors ${active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
                   onClick={() => setOpen(false)}
                 >
                   {l.label}

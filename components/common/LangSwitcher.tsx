@@ -19,6 +19,14 @@ function withLocale(pathname: string, target: string) {
 }
 
 export default function LangSwitcher() {
+  return <LangSwitcherWithTestIds />;
+}
+
+export function LangSwitcherWithTestIds({
+  testIdPrefix,
+}: {
+  testIdPrefix?: string;
+}) {
   const pathname = usePathname();
   const currentLocale = (() => {
     if (!pathname) return 'pl';
@@ -35,6 +43,7 @@ export default function LangSwitcher() {
             key={loc}
             href={withLocale(pathname, loc)}
             prefetch
+            data-testid={testIdPrefix ? `${testIdPrefix}-${loc}` : undefined}
             className={`text-xs font-semibold tracking-wide transition-colors ${active ? 'text-[hsl(var(--copper))]' : 'text-muted-foreground hover:text-foreground'}`}
             aria-current={active ? 'true' : undefined}
           >
