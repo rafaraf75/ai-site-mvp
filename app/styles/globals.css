@@ -37,21 +37,26 @@
     text-rendering: optimizeLegibility;
     line-height: 1.6;
     background-image:
-      radial-gradient(circle at 12% 4%, hsl(188 88% 58% / 0.16), transparent 22rem),
-      radial-gradient(circle at 88% 8%, hsl(205 92% 64% / 0.14), transparent 22rem),
-      radial-gradient(circle at 56% 24%, hsl(184 72% 92% / 0.52), transparent 24rem),
-      radial-gradient(circle at 50% 42rem, hsl(199 82% 86% / 0.14), transparent 30rem),
-      linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
+      radial-gradient(circle at 10% 0%, hsl(188 92% 58% / 0.2), transparent 24rem),
+      radial-gradient(circle at 88% 6%, hsl(204 96% 66% / 0.18), transparent 23rem),
+      radial-gradient(circle at 52% 20%, hsl(191 96% 88% / 0.6), transparent 28rem),
+      radial-gradient(circle at 18% 52%, hsl(192 86% 76% / 0.14), transparent 28rem),
+      radial-gradient(circle at 84% 58%, hsl(201 86% 78% / 0.14), transparent 30rem),
+      radial-gradient(circle at 48% 82%, hsl(189 88% 84% / 0.12), transparent 34rem),
+      linear-gradient(180deg, hsl(205 62% 98%), hsl(202 58% 97%) 42%, hsl(205 56% 98%) 100%);
     background-attachment: fixed;
   }
 
   .dark body {
     background-image:
-      radial-gradient(circle at 8% 4%, hsl(var(--copper) / 0.18), transparent 22rem),
-      radial-gradient(circle at 90% 8%, hsl(206 82% 46% / 0.14), transparent 20rem),
-      radial-gradient(circle at 50% 34rem, hsl(191 82% 18% / 0.22), transparent 26rem),
-      linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
-    background-attachment: scroll;
+      radial-gradient(circle at 8% 0%, hsl(var(--copper) / 0.16), transparent 24rem),
+      radial-gradient(circle at 92% 7%, hsl(205 88% 48% / 0.16), transparent 23rem),
+      radial-gradient(circle at 50% 22%, hsl(191 76% 22% / 0.22), transparent 30rem),
+      radial-gradient(circle at 16% 56%, hsl(188 72% 18% / 0.16), transparent 28rem),
+      radial-gradient(circle at 82% 64%, hsl(209 74% 22% / 0.15), transparent 30rem),
+      radial-gradient(circle at 52% 88%, hsl(191 68% 18% / 0.14), transparent 34rem),
+      linear-gradient(180deg, hsl(216 40% 11%), hsl(215 38% 10%) 42%, hsl(216 38% 9%) 100%);
+    background-attachment: fixed;
   }
 }
 
