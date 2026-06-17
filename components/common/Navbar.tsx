@@ -3,14 +3,18 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import ThemeToggle from '@/components/common/ThemeToggle';
 import { LangSwitcherWithTestIds } from '@/components/common/LangSwitcher';
+import ThemeToggle from '@/components/common/ThemeToggle';
+import { Button } from '@/components/ui/button';
 
 export type NavLabels = {
   home: string;
   services: string;
   contact: string;
+  themeToggle: {
+    toDark: string;
+    toLight: string;
+  };
 };
 
 function currentLocaleFromPath(pathname: string | null): string {
@@ -50,26 +54,26 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
   };
 
   return (
-    <header className="border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="site-navbar-shell border-b backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav
         data-testid="site-navbar"
         className="mx-auto max-w-6xl px-4 sm:px-6"
         role="navigation"
-        aria-label="Główna nawigacja"
+        aria-label="Glowna nawigacja"
       >
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center gap-3">
             <Link
               href={`/${locale}`}
               data-testid="nav-brand-link"
-              className="font-semibold hover:opacity-80"
+              className="font-semibold tracking-[0.01em] transition-colors hover:opacity-90"
               aria-label="RafLab"
             >
               RafLab
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center gap-6" data-testid="site-navbar-desktop">
+          <div className="hidden items-center gap-6 md:flex" data-testid="site-navbar-desktop">
             {navLinks.map((l) => {
               const active = isActive(l.href, l.isRoot);
               return (
@@ -77,8 +81,8 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
                   key={l.href}
                   href={l.href}
                   data-testid={navTestId(l.href, l.isRoot)}
-                  className={`relative pb-1 transition-colors after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-[hsl(var(--copper))]/60 after:transition-transform after:duration-200 hover:after:scale-x-100 ${
-                    active ? 'text-foreground after:scale-x-100 after:bg-[hsl(var(--copper))]' : 'text-muted-foreground hover:text-foreground'
+                  className={`site-nav-link relative pb-1 transition-colors after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-[hsl(var(--copper))]/60 after:transition-transform after:duration-200 hover:after:scale-x-100 ${
+                    active ? 'site-nav-link-active after:scale-x-100 after:bg-[hsl(var(--primary))]' : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   {l.label}
@@ -86,17 +90,18 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
               );
             })}
             <LangSwitcherWithTestIds testIdPrefix="nav-lang" />
-            <ThemeToggle />
+            <ThemeToggle labels={labels.themeToggle} className="site-theme-toggle" />
           </div>
 
-          <div className="md:hidden flex items-center gap-2" data-testid="site-navbar-mobile">
+          <div className="flex items-center gap-2 md:hidden" data-testid="site-navbar-mobile">
             <LangSwitcherWithTestIds testIdPrefix="nav-mobile-lang" />
             <Button
               variant="outline"
               size="sm"
+              className="site-mobile-menu-button"
               aria-expanded={open}
               aria-controls="mobile-menu"
-              aria-label="Otwórz menu"
+              aria-label="Otworz menu"
               onClick={() => setOpen((v) => !v)}
             >
               Menu
@@ -104,7 +109,7 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
           </div>
         </div>
 
-        <div id="mobile-menu" className={`md:hidden ${open ? 'block' : 'hidden'} pb-4 border-t`}>
+        <div id="mobile-menu" className={`site-mobile-menu pb-4 border-t md:hidden ${open ? 'block' : 'hidden'}`}>
           <div className="flex flex-col gap-3 pt-3">
             {navLinks.map((l) => {
               const active = isActive(l.href, l.isRoot);
@@ -113,14 +118,14 @@ export default function Navbar({ labels }: { labels: NavLabels }) {
                   key={l.href}
                   href={l.href}
                   data-testid={mobileNavTestId(l.href, l.isRoot)}
-                  className={`px-1 py-1 transition-colors ${active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+                  className={`site-mobile-nav-link px-1 py-1 transition-colors ${active ? 'site-mobile-nav-link-active' : 'text-muted-foreground hover:text-foreground'}`}
                   onClick={() => setOpen(false)}
                 >
                   {l.label}
                 </Link>
               );
             })}
-            <ThemeToggle />
+            <ThemeToggle labels={labels.themeToggle} className="site-theme-toggle" />
           </div>
         </div>
       </nav>

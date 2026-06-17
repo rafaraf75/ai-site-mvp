@@ -26,17 +26,18 @@ export default function Hero({title, subtitle, localLine, primaryCta, secondaryC
     <section className="relative overflow-hidden py-12 sm:py-14 lg:py-16 text-center">
       <div className="pointer-events-none absolute inset-0 -z-10 hero-backdrop-2026" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-0 -z-10 hero-cinematic-2026" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-x-[10%] bottom-1 h-10 hero-glow -z-10" aria-hidden="true" />
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-b from-transparent to-background -z-10"
         aria-hidden="true"
       />
-      <div className="mx-auto max-w-6xl w-full px-4 sm:px-6 relative z-10">
-        <div className="hero-glass">
+      <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 relative z-10">
+        <div className="hero-glass brand-shell">
           <motion.h1
             initial={mounted ? "hidden" : false}
             animate={mounted ? "show" : false}
             variants={fade}
-            className="hero-title-3d mx-auto max-w-4xl text-3xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.08] md:leading-[1.02]"
+            className="page-heading hero-title-3d mx-auto max-w-4xl text-[2.05rem] sm:text-[2.8rem] lg:text-[3.3rem] text-white"
           >
             {title}
           </motion.h1>
@@ -45,7 +46,7 @@ export default function Hero({title, subtitle, localLine, primaryCta, secondaryC
             animate={mounted ? "show" : false}
             variants={fade}
             transition={{delay: 0.15}}
-            className="mt-5 text-[0.98rem] sm:text-lg text-muted-foreground leading-7 max-w-[64ch] mx-auto"
+            className="section-copy mt-5 mx-auto max-w-[64ch] text-[1rem] text-[hsl(200_35%_88%)] sm:text-[1.08rem] dark:text-[hsl(var(--muted-foreground))]"
           >
             {subtitle}
           </motion.p>
@@ -54,7 +55,7 @@ export default function Hero({title, subtitle, localLine, primaryCta, secondaryC
             animate={mounted ? "show" : false}
             variants={fade}
             transition={{delay: 0.22}}
-            className="mt-4 text-sm sm:text-[0.98rem] text-muted-foreground/90"
+            className="eyebrow mt-4 text-[0.8rem] text-[hsl(199_24%_80%)] sm:text-[0.86rem] dark:text-[hsl(var(--muted-foreground)/0.92)]"
           >
             {localLine}
           </motion.p>
@@ -64,9 +65,9 @@ export default function Hero({title, subtitle, localLine, primaryCta, secondaryC
             animate={mounted ? "show" : false}
             variants={fade}
             transition={{delay: 0.3}}
-            className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button asChild size="lg" className="group">
+            <Button asChild size="lg" className="group min-w-[15rem]">
               <Link href={primaryCta.href} aria-label={primaryCta.label}>
                 <span className="inline-flex items-center gap-2">
                   {primaryCta.label}
@@ -74,7 +75,7 @@ export default function Hero({title, subtitle, localLine, primaryCta, secondaryC
                 </span>
               </Link>
             </Button>
-            <Button asChild size="lg" variant="secondary" className="group">
+            <Button asChild size="lg" variant="secondary" className="group min-w-[15rem]">
               <Link href={secondaryCta.href} aria-label={secondaryCta.label}>
                 <span className="inline-flex items-center gap-2">
                   {secondaryCta.label}

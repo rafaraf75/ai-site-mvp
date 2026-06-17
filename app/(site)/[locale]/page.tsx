@@ -1,5 +1,3 @@
-import LangSwitcher from "@/components/common/LangSwitcher";
-import ThemeToggle from "@/components/common/ThemeToggle";
 import Hero from "@/components/sections/Hero";
 import MiniAudit from "@/components/sections/MiniAudit";
 import Benefits from "@/components/sections/Benefits";
@@ -38,7 +36,6 @@ type Messages = {
       note: string;
       cta: string;
     };
-    changeLanguage: string;
   };
   servicesPreview: {
     title: string;
@@ -103,23 +100,6 @@ export default async function HomeLocale({
         cta={{label: messages.home.projectStatus.cta, href: `/${locale}/contact?type=mini-audit`}}
       />
       <FAQ title={messages.faq.title} items={messages.faq.items} />
-
-      <section className="py-10 mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col gap-3">
-          <div>
-            <small>{messages.home.changeLanguage}:</small>
-            <div className="mt-2">
-              <LangSwitcher />
-            </div>
-          </div>
-          <div>
-            <small>Motyw:</small>
-            <div className="mt-2">
-              <ThemeToggle />
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
