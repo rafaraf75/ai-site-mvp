@@ -61,6 +61,7 @@ export default function ContactForm({
         </label>
         <Input
           id="name"
+          data-testid="contact-name"
           placeholder={messages.namePlaceholder ?? 'Jan'}
           aria-invalid={!!errors.name}
           {...register('name')}
@@ -76,6 +77,7 @@ export default function ContactForm({
         <Input
           id="email"
           type="email"
+          data-testid="contact-email"
           placeholder={messages.emailPlaceholder ?? 'jan@example.com'}
           aria-invalid={!!errors.email}
           {...register('email')}
@@ -93,6 +95,7 @@ export default function ContactForm({
         ) : null}
         <textarea
           id="message"
+          data-testid="contact-message"
           className="w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
           rows={5}
           aria-invalid={!!errors.message}
@@ -104,7 +107,7 @@ export default function ContactForm({
         )}
       </div>
       <div className="flex items-center gap-3">
-        <Button type="submit" disabled={isSubmitting}>
+        <Button type="submit" disabled={isSubmitting} data-testid="contact-submit">
           {isSubmitting ? '...' : messages.submit}
         </Button>
         {sent === 'ok' && <span className="text-sm text-green-600">{messages.success}</span>}
