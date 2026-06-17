@@ -6,49 +6,132 @@ import {Button} from "@/components/ui/button";
 
 type Msg = {id: string; role: "user" | "assistant"; text: string};
 
-function answerFor(input: string, locale: string): string {
+type Copy = {
+  dialogLabel: string;
+  title: string;
+  intro: string;
+  placeholder: string;
+  privacy: string;
+  closeLabel: string;
+  sendLabel: string;
+  answers: {
+    miniAudit: string;
+    contact: string;
+    languages: string;
+    pricing: string;
+    general: string;
+  };
+};
+
+function copyFor(locale: string): Copy {
+  if (locale === "pl") {
+    return {
+      dialogLabel: "Widget mini-audytu",
+      title: "Mini-audyt RafLab",
+      intro:
+        "Czesc! Moge pomóc Ci sprawdzic, czy strona lub profil Google Twojej firmy ulatwia klientom kontakt. Najlepszy pierwszy krok to bezplatny mini-audyt.",
+      placeholder: "Napisz wiadomosc...",
+      privacy:
+        "Ten widget jest tylko demonstracyjny i nie wysyla rozmów na serwer. Do mini-audytu uzyj formularza kontaktowego.",
+      closeLabel: "Zamknij",
+      sendLabel: "Wyslij",
+      answers: {
+        miniAudit:
+          "Najlepszy pierwszy krok to bezplatny mini-audyt strony, profilu Google albo obecnosci online. Przejdz do kontaktu i wyslij link.",
+        contact:
+          "Najlatwiej przejsc do strony Kontakt i wyslac link do strony, profilu Google albo krótki opis firmy.",
+        languages:
+          "Mozliwa jest komunikacja PL / ES / EN, zaleznie od potrzeb firmy i klientów.",
+        pricing:
+          "Na tym etapie glówny pierwszy krok to bezplatny mini-audyt i rozmowa. Dopiero pózniej mozna ocenic, czy warto przygotowac konkretna propozycje.",
+        general:
+          "Moge pomóc w kierunku mini-audytu, Google, WhatsApp, formularzy i lokalnej widocznosci. Najlepiej zacząć od formularza kontaktowego.",
+      },
+    };
+  }
+
+  if (locale === "es") {
+    return {
+      dialogLabel: "Widget de mini-auditoria",
+      title: "Mini-auditoria RafLab",
+      intro:
+        "Hola! Puedo ayudarte a revisar si la web o el perfil de Google de tu negocio facilita el contacto con clientes. El mejor primer paso es una mini-auditoria gratuita.",
+      placeholder: "Escribe un mensaje...",
+      privacy:
+        "Este widget es solo orientativo y no envia conversaciones al servidor. Para la mini-auditoria usa el formulario de contacto.",
+      closeLabel: "Cerrar",
+      sendLabel: "Enviar",
+      answers: {
+        miniAudit:
+          "El mejor primer paso es una mini-auditoria gratuita de la web, perfil de Google o presencia online. Ve a Contacto y envia el enlace.",
+        contact:
+          "La forma mas facil es ir a la pagina de Contacto y enviar el enlace de tu web, perfil de Google o una breve descripcion del negocio.",
+        languages:
+          "La comunicacion puede ser en PL / ES / EN, segun las necesidades del negocio y de sus clientes.",
+        pricing:
+          "Ahora el primer paso principal es la mini-auditoria gratuita y la conversacion. Despues se puede ver si tiene sentido preparar una propuesta concreta.",
+        general:
+          "Puedo orientarte sobre mini-auditoria, Google, WhatsApp, formularios y visibilidad local. Lo mejor es empezar por el formulario de contacto.",
+      },
+    };
+  }
+
+  return {
+    dialogLabel: "Mini-audit widget",
+    title: "RafLab mini-audit",
+    intro:
+      "Hi! I can help you check whether your website or Google profile makes it easy for customers to contact you. The best first step is a free mini-audit.",
+    placeholder: "Write a message...",
+    privacy:
+      "This widget is only for guidance and does not send conversations to the server. For the mini-audit, use the contact form.",
+    closeLabel: "Close",
+    sendLabel: "Send",
+    answers: {
+      miniAudit:
+        "The best first step is a free mini-audit of your website, Google profile or online presence. Go to Contact and send the link.",
+      contact:
+        "The easiest way is to use the Contact page and send your website link, Google profile or a short business description.",
+      languages:
+        "Communication can be in PL / ES / EN depending on the business and customer needs.",
+      pricing:
+        "At this stage the main first step is a free mini-audit and conversation. After that, it is possible to decide whether a concrete proposal makes sense.",
+      general:
+        "I can point you in the direction of a mini-audit, Google, WhatsApp, forms and local visibility. The best next step is the contact form.",
+    },
+  };
+}
+
+function answerFor(input: string, copy: Copy): string {
   const q = input.toLowerCase();
-  if (/(cena|pakiet|price)/i.test(q)) {
-    return locale === "pl"
-      ? "Mamy 3 pakiety (Starter/Pro/Custom). Zobacz sekcję Pakiety lub przejdź do kontaktu, aby dobrać plan."
-      : locale === "es"
-      ? "Tenemos 3 paquetes (Starter/Pro/Custom). Revisa la sección de Paquetes o ve a Contacto."
-      : "We have 3 packages (Starter/Pro/Custom). Check the Pricing section or go to Contact.";
+
+  if (/(mini|audit|audyt|auditoria|review)/i.test(q)) {
+    return copy.answers.miniAudit;
   }
-  if (/(kontakt|contact)/i.test(q)) {
-    return locale === "pl"
-      ? "Najłatwiej skontaktować się przez stronę Kontakt — formularz wyśle do nas wiadomość."
-      : locale === "es"
-      ? "La forma más fácil es la página de Contacto — el formulario nos envía tu mensaje."
-      : "The easiest way is the Contact page — the form sends us your message.";
+
+  if (/(cena|ceny|price|pricing|pakiet|pakiety|package|packages|presupuesto)/i.test(q)) {
+    return copy.answers.pricing;
   }
-  if (/(i18n|język|language)/i.test(q)) {
-    return locale === "pl"
-      ? "Serwis obsługuje języki PL/EN/ES oraz hreflang."
-      : locale === "es"
-      ? "El sitio soporta ES/EN/PL y hreflang."
-      : "The site supports EN/PL/ES and hreflang.";
+
+  if (/(kontakt|contact|contacto|whatsapp|google|perfil|profile|form|formulario)/i.test(q)) {
+    return copy.answers.contact;
   }
-  return locale === "pl"
-    ? "To demonstracyjny widget bez zapisu danych. Podaj słowo kluczowe (np. cena, kontakt, i18n) lub przejdź do sekcji na stronie."
-    : locale === "es"
-    ? "Widget de demostración sin guardar datos. Escribe una palabra clave (p.ej. precio, contacto, i18n) o navega a la sección."
-    : "Demo widget (no data stored). Try a keyword (e.g. price, contact, i18n) or navigate to the section.";
+
+  if (/(jezyk|język|language|languages|idioma|idiomas|\bpl\b|\ben\b|\bes\b)/i.test(q)) {
+    return copy.answers.languages;
+  }
+
+  return copy.answers.general;
 }
 
 export default function ChatWidget({locale}: {locale: string}) {
+  const copy = copyFor(locale);
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Msg[]>([
     {
       id: "m0",
       role: "assistant",
-      text:
-        locale === "pl"
-          ? "Cześć! Jestem lekkim widgetem demo. Nie zapisuję danych. Zadaj pytanie (np. cena, kontakt, i18n)."
-          : locale === "es"
-          ? "¡Hola! Soy un widget de demostración. No guardo datos. Pregunta (p.ej. precio, contacto, i18n)."
-          : "Hi! I'm a lightweight demo widget. I don't store data. Ask about price, contact, i18n.",
+      text: copy.intro,
     },
   ]);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -62,7 +145,11 @@ export default function ChatWidget({locale}: {locale: string}) {
     const text = input.trim();
     if (!text) return;
     const userMsg: Msg = {id: crypto.randomUUID(), role: "user", text};
-    const botMsg: Msg = {id: crypto.randomUUID(), role: "assistant", text: answerFor(text, locale)};
+    const botMsg: Msg = {
+      id: crypto.randomUUID(),
+      role: "assistant",
+      text: answerFor(text, copy),
+    };
     setMessages((m) => [...m, userMsg, botMsg]);
     setInput("");
   }
@@ -83,7 +170,7 @@ export default function ChatWidget({locale}: {locale: string}) {
         aria-expanded={open}
         aria-controls="chat-widget-dialog"
       >
-        <MessageCircle className="mr-2" size={16} /> {locale === "pl" ? "Chat" : locale === "es" ? "Chat" : "Chat"}
+        <MessageCircle className="mr-2" size={16} /> Chat
       </Button>
 
       {open && (
@@ -91,7 +178,7 @@ export default function ChatWidget({locale}: {locale: string}) {
           id="chat-widget-dialog"
           role="dialog"
           aria-modal="true"
-          aria-label={locale === "pl" ? "Widget czatu" : locale === "es" ? "Widget de chat" : "Chat widget"}
+          aria-label={copy.dialogLabel}
           className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/30"
           onClick={(e) => {
             if (e.target === e.currentTarget) close();
@@ -99,10 +186,8 @@ export default function ChatWidget({locale}: {locale: string}) {
         >
           <div className="w-full sm:max-w-md sm:rounded-lg sm:shadow-xl sm:border bg-background text-foreground p-3 sm:p-4 m-0 sm:m-4">
             <div className="flex items-center justify-between mb-2">
-              <div className="font-medium">
-                {locale === "pl" ? "Szybki chat (demo)" : locale === "es" ? "Chat rápido (demo)" : "Quick chat (demo)"}
-              </div>
-              <button aria-label="Close" className="p-2 hover:opacity-80" onClick={close}>
+              <div className="font-medium">{copy.title}</div>
+              <button aria-label={copy.closeLabel} className="p-2 hover:opacity-80" onClick={close}>
                 <X size={16} />
               </button>
             </div>
@@ -134,31 +219,18 @@ export default function ChatWidget({locale}: {locale: string}) {
                   if (e.key === "Enter") send();
                   if (e.key === "Escape") close();
                 }}
-                placeholder={
-                  locale === "pl"
-                    ? "Napisz wiadomość…"
-                    : locale === "es"
-                    ? "Escribe un mensaje…"
-                    : "Type a message…"
-                }
+                placeholder={copy.placeholder}
                 className="flex-1 rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
               />
-              <Button type="button" onClick={send} aria-label="Send">
+              <Button type="button" onClick={send} aria-label={copy.sendLabel}>
                 <Send size={16} />
               </Button>
             </div>
 
-            <p className="mt-2 text-xs text-muted-foreground">
-              {locale === "pl"
-                ? "Prywatność: to demo nie wysyła rozmów na serwer i nic nie zapisuje."
-                : locale === "es"
-                ? "Privacidad: esta demo no envía conversaciones al servidor ni guarda datos."
-                : "Privacy: this demo does not send conversations to a server and stores nothing."}
-            </p>
+            <p className="mt-2 text-xs text-muted-foreground">{copy.privacy}</p>
           </div>
         </div>
       )}
     </div>
   );
 }
-

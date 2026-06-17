@@ -5,7 +5,6 @@ import Navbar, { type NavLabels } from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
 import { LOCALES, SITE_NAME, SITE_URL, defaultOgImage } from '@/lib/seo';
 import ThemeScript from '@/components/common/ThemeScript';
-import ChatWidget from '@/components/common/ChatWidget';
 
 export const locales = ['pl', 'en', 'es'] as const;
 
@@ -89,8 +88,6 @@ export default async function LocaleLayout({
         </main>
         <Footer labels={messages.footer} locale={locale} />
       </ThemeProvider>
-      {(process.env.NEXT_PUBLIC_CHAT_WIDGET_ENABLED === '1' ||
-        process.env.NEXT_PUBLIC_CHAT_WIDGET_ENABLED === 'true') && <ChatWidget locale={locale} />}
     </>
   );
 }
