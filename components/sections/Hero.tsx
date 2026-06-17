@@ -13,7 +13,7 @@ type Props = {
   subtitle: string;
   localLine: string;
   primaryCta: {label: string; href: string};
-  secondaryCta: {label: string; href: string};
+  secondaryCta?: {label: string; href: string; external?: boolean};
 };
 
 export default function Hero({title, subtitle, localLine, primaryCta, secondaryCta}: Props) {
@@ -75,14 +75,38 @@ export default function Hero({title, subtitle, localLine, primaryCta, secondaryC
                 </span>
               </Link>
             </Button>
-            <Button asChild size="lg" variant="secondary" className="group min-w-[15rem]">
-              <Link href={secondaryCta.href} aria-label={secondaryCta.label}>
-                <span className="inline-flex items-center gap-2">
-                  {secondaryCta.label}
-                  <ArrowRight className="transition-transform group-hover:translate-x-0.5" size={18} aria-hidden="true" />
-                </span>
-              </Link>
-            </Button>
+            {secondaryCta ? (
+              <Button asChild size="lg" variant="secondary" className="group min-w-[15rem]">
+                {secondaryCta.external ? (
+                  <a
+                    href={secondaryCta.href}
+                    aria-label={secondaryCta.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      {secondaryCta.label}
+                      <ArrowRight
+                        className="transition-transform group-hover:translate-x-0.5"
+                        size={18}
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </a>
+                ) : (
+                  <Link href={secondaryCta.href} aria-label={secondaryCta.label}>
+                    <span className="inline-flex items-center gap-2">
+                      {secondaryCta.label}
+                      <ArrowRight
+                        className="transition-transform group-hover:translate-x-0.5"
+                        size={18}
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </Link>
+                )}
+              </Button>
+            ) : null}
           </motion.div>
         </div>
       </div>

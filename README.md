@@ -23,9 +23,10 @@ Utwórz `.env.local` i ustaw:
 ```
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 NEXT_PUBLIC_PLAUSIBLE_DOMAIN=localhost
+NEXT_PUBLIC_WHATSAPP_URL=
 ```
 
-W produkcji ustaw `NEXT_PUBLIC_SITE_URL` na pełny adres (np. `https://twojadomena.pl`) i `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` na domenę śledzoną w Plausible.
+W produkcji ustaw `NEXT_PUBLIC_SITE_URL` na pełny adres (np. `https://twojadomena.pl`) i `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` na domenę śledzoną w Plausible. Jeśli chcesz pokazywać przycisk WhatsApp w hero, ustaw też `NEXT_PUBLIC_WHATSAPP_URL` na pełny link `wa.me`.
 
 ## SEO
 - Konfiguracja: `lib/seo.ts`, `next-seo.config.ts`

@@ -53,6 +53,7 @@ export default async function HomeLocale({
 }) {
   const {locale} = await params;
   const messages = (await import(`@/locales/${locale}.json`)).default as Messages;
+  const whatsappUrl = process.env.NEXT_PUBLIC_WHATSAPP_URL?.trim();
 
   return (
     <main className="">
@@ -61,7 +62,15 @@ export default async function HomeLocale({
         subtitle={messages.home.subheading}
         localLine={messages.home.localLine}
         primaryCta={{label: messages.home.ctaPrimary, href: `/${locale}/contact?type=mini-audit`}}
-        secondaryCta={{label: messages.home.ctaSecondary, href: `/${locale}/contact`}}
+        secondaryCta={
+          whatsappUrl
+            ? {
+                label: messages.home.ctaSecondary,
+                href: whatsappUrl,
+                external: true,
+              }
+            : undefined
+        }
       />
 
       <MiniAudit
