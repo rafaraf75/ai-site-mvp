@@ -16,10 +16,12 @@ type ServiceCard = {
 
 export default function ServicesPreview({
   title,
+  subtitle,
   cards,
   ctaLabel,
 }: {
   title: string;
+  subtitle: string;
   cards: ServiceCard[];
   ctaLabel: string;
 }) {
@@ -27,9 +29,12 @@ export default function ServicesPreview({
     <section className="py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-semibold">{title}</h2>
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-semibold">{title}</h2>
+            <p className="mt-3 text-muted-foreground">{subtitle}</p>
+          </div>
           <Button asChild variant="outline" size="sm" className="group">
-            <Link href={cards[0]?.href ?? "/services"}>
+            <Link href={cards[0]?.href ?? "/contact"}>
               <span className="inline-flex items-center gap-2">
                 {ctaLabel}
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />

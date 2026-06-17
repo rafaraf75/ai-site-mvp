@@ -8,9 +8,11 @@ type Benefit = {title: string; desc: string};
 
 export default function Benefits({
   title,
+  subtitle,
   items,
 }: {
   title: string;
+  subtitle: string;
   items: Benefit[];
 }) {
   const reduce = useReducedMotion();
@@ -21,6 +23,7 @@ export default function Benefits({
     <section className="py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-2xl font-semibold mb-6">{title}</h2>
+        <p className="text-muted-foreground max-w-3xl mb-6">{subtitle}</p>
         <motion.div
           initial={false}
           whileInView="show"

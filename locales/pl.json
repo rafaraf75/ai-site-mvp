@@ -20,16 +20,27 @@
     ]
   },
   "servicesPreview": {
-    "title": "Usługi",
-    "cta": "Zobacz ofertę",
-    "ai": {
-      "title": "Asystenci AI",
-      "desc": "Kreatywne i produktywne wsparcie dopasowane do Twoich procesów."
-    },
-    "web": {
-      "title": "Strony i Serwisy",
-      "desc": "Nowoczesne, szybkie i dostępne strony z naciskiem na SEO."
-    }
+    "title": "W czym mogę pomóc?",
+    "subtitle": "Na tym etapie najważniejsze są małe, praktyczne kroki: lepsza widoczność, prostszy kontakt i pierwsze automatyzacje.",
+    "cta": "Poproś o mini-audyt",
+    "items": [
+      {
+        "title": "Strona lokalnej firmy",
+        "desc": "Prosta, szybka strona z opisem usług, lokalizacją, Google Maps, WhatsApp i formularzem kontaktowym."
+      },
+      {
+        "title": "Formularze i rezerwacje",
+        "desc": "Formularz zapytania lub rezerwacji, który zbiera najważniejsze dane i wysyła je w uporządkowany sposób."
+      },
+      {
+        "title": "Google, WhatsApp i kontakt",
+        "desc": "Uporządkowanie ścieżki klienta: od znalezienia firmy w Google do szybkiego kontaktu z telefonu."
+      },
+      {
+        "title": "Proste automatyzacje",
+        "desc": "Połączenie formularza, e-maila, arkusza lub powiadomień, żeby mniej rzeczy robić ręcznie."
+      }
+    ]
   },
   "nav": {
     "home": "Start",
@@ -42,17 +53,55 @@
     "social": "Media społecznościowe"
   },
   "home": {
-    "heading": "Asystenci AI i strony, które robią robotę",
-    "subheading": "Budujemy szybkie, dostępne i SEO-friendly landing page z i18n i dark mode.",
-    "ctaDemo": "Zobacz demo",
-    "ctaCall": "Umów rozmowę",
-    "benefitsTitle": "Korzyści",
+    "heading": "Strony, formularze i automatyzacje dla małych firm w Hiszpanii",
+    "subheading": "Pomagam lokalnym firmom poprawić obecność online i kontakt z klientami przez stronę internetową, Google, WhatsApp, formularze oraz proste automatyzacje. Najlepszy pierwszy krok to krótki mini-audyt strony lub profilu Google.",
+    "localLine": "Alicante · Santa Pola · Gran Alacant · Elche · PL / ES / EN",
+    "ctaPrimary": "Poproś o mini-audyt",
+    "ctaSecondary": "Napisz na WhatsApp",
+    "miniAudit": {
+      "eyebrow": "Bezpłatny mini-audyt",
+      "title": "Sprawdźmy, czy Twoja firma łatwo zdobywa zapytania z internetu",
+      "description": "Wyślij link do swojej strony albo profilu Google. Sprawdzę kilka praktycznych elementów, które wpływają na to, czy klient zaufa firmie i szybko się skontaktuje.",
+      "checklist": [
+        "Czy klient od razu rozumie, czym się zajmujesz",
+        "Czy łatwo kliknąć WhatsApp, zadzwonić albo wysłać zapytanie",
+        "Czy strona działa dobrze na telefonie",
+        "Czy profil Google wygląda wiarygodnie",
+        "Czy usługi, lokalizacja i języki są jasne",
+        "Czy warto dodać prosty formularz lub rezerwację online"
+      ],
+      "note": "Mini-audyt to pierwszy krok: pomaga szybko sprawdzić, które poprawki mają największy sens — strona, profil Google, WhatsApp, formularz, rezerwacja online albo prosta automatyzacja.",
+      "cta": "Chcę mini-audyt"
+    },
+    "benefitsTitle": "Co może poprawić RafLab?",
+    "benefitsSubtitle": "Skupiam się na prostych zmianach, które pomagają małej firmie wyglądać wiarygodniej online i szybciej zdobywać zapytania od klientów.",
     "benefits": [
-      {"title": "Szybkość", "desc": "Core Web Vitals na zielono dzięki optymalizacjom."},
-      {"title": "i18n", "desc": "Pełne tłumaczenia PL/EN/ES i hreflang."},
-      {"title": "Dark mode", "desc": "Motyw dostosowany do systemu z przełącznikiem."},
-      {"title": "A11y", "desc": "Skupiony na dostępności: aria, kontrast, klawiatura."}
+      {"title": "Więcej kontaktów z telefonu", "desc": "Strona i profil Google powinny prowadzić klienta prosto do rozmowy, WhatsAppa, telefonu albo formularza."},
+      {"title": "Lepsza obecność w Google", "desc": "Pomagam uporządkować podstawowe informacje, usługi, lokalizację i linki, żeby klient szybciej zrozumiał ofertę."},
+      {"title": "Mniej chaosu w zapytaniach", "desc": "Formularze i proste automatyzacje pomagają zbierać dane klienta w jednym miejscu zamiast gubić je w wiadomościach."},
+      {"title": "Komunikacja PL / ES / EN", "desc": "To dobre rozwiązanie dla firm w Hiszpanii, które obsługują Polaków, Hiszpanów i klientów zagranicznych."}
     ],
+    "projectStatus": {
+      "eyebrow": "Jak zaczynamy",
+      "title": "Najpierw sprawdzamy sytuację, potem wybieramy konkretne rozwiązanie",
+      "description": "Nie każda firma potrzebuje od razu nowej strony albo dużego systemu. Czasem wystarczy lepszy profil Google, prostszy kontakt przez WhatsApp, formularz albo uporządkowanie zapytań. Dlatego zaczynam od krótkiej analizy i rozmowy.",
+      "steps": [
+        {
+          "title": "Pokazujesz, co już masz",
+          "desc": "Możesz wysłać stronę, profil Google, social media albo krótki opis firmy."
+        },
+        {
+          "title": "Wybieramy najważniejszy problem",
+          "desc": "Sprawdzamy, czy największą przeszkodą jest widoczność, kontakt, formularz, rezerwacje czy chaos w wiadomościach."
+        },
+        {
+          "title": "Dopiero potem decyzja",
+          "desc": "Jeśli będzie sens, można omówić małe, konkretne wdrożenie zamiast dużego projektu na siłę."
+        }
+      ],
+      "note": "Na tym etapie najważniejsze są rozmowy z lokalnymi firmami i praktyczne potrzeby. Płatne wdrożenia będą ustalane indywidualnie po uporządkowaniu formalności.",
+      "cta": "Zacznij od mini-audytu"
+    },
     "changeLanguage": "Zmień język"
   },
   "pricing": {
@@ -97,13 +146,14 @@
     ]
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Najczęstsze pytania",
     "items": [
-      {"q": "Jak wygląda proces?", "a": "Discovery → Design → Development → Launch. Pracujemy iteracyjnie."},
-      {"q": "Czy mogę edytować treści?", "a": "Tak, treści są w plikach JSON (i18n)."},
-      {"q": "Czy jest backend?", "a": "W MVP używamy Formspree lub prostego endpointu email."},
-      {"q": "Czy to jest szybkie?", "a": "Tak, celujemy w zielone Core Web Vitals."},
-      {"q": "Czy jest analytics?", "a": "Tak, Plausible – lekki i bez cookies."}
+      {"q": "Czy mini-audyt jest naprawdę bezpłatny?", "a": "Tak. To krótka, bezpłatna analiza strony, profilu Google albo obecności online. Otrzymasz kilka konkretnych sugestii bez zobowiązań."},
+      {"q": "Czy RafLab jest już oficjalną działalnością?", "a": "Projekt jest w fazie przygotowania i walidacji. Obecnie prowadzę rozmowy z lokalnymi firmami i sprawdzam, jakie problemy warto rozwiązywać w pierwszej kolejności."},
+      {"q": "Dla kogo jest ta pomoc?", "a": "Dla małych firm, autónomos, lokalnych usługodawców, polskich firm w Hiszpanii oraz firm, które chcą poprawić stronę, Google, WhatsApp, formularze lub prostą rezerwację online."},
+      {"q": "Czy muszę mieć już stronę internetową?", "a": "Nie. Możesz wysłać profil Google, Facebook, Instagram albo krótki opis firmy. Mini-audyt może zacząć się od tego, co już masz."},
+      {"q": "W jakich językach możemy rozmawiać?", "a": "Możemy komunikować się po polsku i angielsku, a treści po hiszpańsku przygotowuję z dużą ostrożnością i weryfikacją."},
+      {"q": "Co dzieje się po mini-audycie?", "a": "Dostajesz konkretne uwagi. Jeśli będzie sens i chęć po obu stronach, można później porozmawiać o możliwym rozwiązaniu lub wycenie po uporządkowaniu formalności."}
     ]
   },
   "services": {
@@ -136,13 +186,19 @@
     },
     "cta": "Skontaktuj się z nami"
   },
+  "contactPage": {
+    "title": "Wyślij stronę, profil Google albo opisz problem",
+    "description": "Możesz napisać, czy chodzi o stronę, Google, WhatsApp, formularz, rezerwacje albo automatyzację. Najlepszy pierwszy krok to mini-audyt."
+  },
   "contactForm": {
     "nameLabel": "Imię",
     "emailLabel": "E-mail",
-    "messageLabel": "Wiadomość",
-    "messagePlaceholder": "Opisz krótko potrzeby",
-    "description": "Napisz do nas, a wrócimy z odpowiedzią.",
-    "submit": "Wyślij",
+    "messageLabel": "Link i krótki opis",
+    "messageHint": "Możesz wkleić link do strony, profilu Google, Facebooka albo Instagrama i dodać kilka zdań o firmie.",
+    "messagePlaceholder": "Np. link do strony lub profilu Google oraz krótki opis firmy",
+    "namePlaceholder": "Jan",
+    "emailPlaceholder": "jan@example.com",
+    "submit": "Wyślij do mini-audytu",
     "success": "Wysłano. Dzięki!",
     "error": "Coś poszło nie tak. Spróbuj ponownie."
   }

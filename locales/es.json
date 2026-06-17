@@ -20,16 +20,27 @@
     ]
   },
   "servicesPreview": {
-    "title": "Servicios",
-    "cta": "Ver oferta",
-    "ai": {
-      "title": "Asistentes de IA",
-      "desc": "Ayudantes creativos y productivos adaptados a tus flujos."
-    },
-    "web": {
-      "title": "Sitios y Aplicaciones",
-      "desc": "Sitios modernos, rápidos y accesibles con enfoque en SEO."
-    }
+    "title": "¿En qué puedo ayudar?",
+    "subtitle": "En esta fase lo más importante son pasos pequeños y prácticos: mejor visibilidad, contacto más fácil y primeras automatizaciones.",
+    "cta": "Solicitar mini-auditoría",
+    "items": [
+      {
+        "title": "Web para negocio local",
+        "desc": "Una web sencilla y rápida con servicios, ubicación, Google Maps, WhatsApp y formulario de contacto."
+      },
+      {
+        "title": "Formularios y reservas",
+        "desc": "Un formulario de consulta o reserva que recoge los datos importantes y los envía de forma ordenada."
+      },
+      {
+        "title": "Google, WhatsApp y contacto",
+        "desc": "Ordenar el camino del cliente: desde encontrar el negocio en Google hasta contactar fácilmente desde el móvil."
+      },
+      {
+        "title": "Automatizaciones sencillas",
+        "desc": "Conectar formulario, email, hoja de cálculo o notificaciones para hacer menos tareas manuales."
+      }
+    ]
   },
   "nav": {
     "home": "Inicio",
@@ -42,17 +53,55 @@
     "social": "Redes sociales"
   },
   "home": {
-    "heading": "Asistentes de IA y sitios que convierten",
-    "subheading": "Creamos landings rápidas, accesibles y con SEO, con i18n y modo oscuro.",
-    "ctaDemo": "Ver demo",
-    "ctaCall": "Reservar llamada",
-    "benefitsTitle": "Beneficios",
+    "heading": "Páginas web, formularios y automatizaciones para pequeños negocios en España",
+    "subheading": "Ayudo a negocios locales a mejorar su presencia online y el contacto con clientes mediante una web clara, Google, WhatsApp, formularios y automatizaciones sencillas. El mejor primer paso es una breve mini-auditoría de la web o del perfil de Google.",
+    "localLine": "Alicante · Santa Pola · Gran Alacant · Elche · PL / ES / EN",
+    "ctaPrimary": "Solicitar mini-auditoría",
+    "ctaSecondary": "Escribir por WhatsApp",
+    "miniAudit": {
+      "eyebrow": "Mini-auditoría gratuita",
+      "title": "Comprobemos si tu negocio consigue contactos fácilmente desde internet",
+      "description": "Envíame el enlace de tu web o perfil de Google. Revisaré algunos puntos prácticos que influyen en la confianza del cliente y en la facilidad para contactar contigo.",
+      "checklist": [
+        "Si el cliente entiende rápidamente qué ofreces",
+        "Si es fácil escribir por WhatsApp, llamar o enviar una consulta",
+        "Si la web funciona bien en móvil",
+        "Si el perfil de Google transmite confianza",
+        "Si los servicios, la ubicación y los idiomas están claros",
+        "Si merece la pena añadir un formulario o reserva online"
+      ],
+      "note": "La mini-auditoría es el primer paso: ayuda a detectar qué mejoras tienen más sentido — web, perfil de Google, WhatsApp, formulario, reserva online o una automatización sencilla.",
+      "cta": "Quiero una mini-auditoría"
+    },
+    "benefitsTitle": "¿Qué puede mejorar RafLab?",
+    "benefitsSubtitle": "Me centro en cambios sencillos que ayudan a un pequeño negocio a transmitir más confianza online y recibir contactos de clientes con más facilidad.",
     "benefits": [
-      {"title": "Velocidad", "desc": "Core Web Vitals en verde con optimizaciones."},
-      {"title": "i18n", "desc": "Traducciones PL/EN/ES completas y hreflang."},
-      {"title": "Modo oscuro", "desc": "Tema según el sistema con interruptor."},
-      {"title": "A11y", "desc": "Accesible: aria, contraste, teclado."}
+      {"title": "Más contactos desde el móvil", "desc": "La web y el perfil de Google deben llevar al cliente directamente a una llamada, WhatsApp, teléfono o formulario."},
+      {"title": "Mejor presencia en Google", "desc": "Ayudo a ordenar la información básica, servicios, ubicación y enlaces para que el cliente entienda antes la oferta."},
+      {"title": "Menos caos en las consultas", "desc": "Los formularios y automatizaciones sencillas ayudan a recoger los datos del cliente en un solo lugar, sin perderlos entre mensajes."},
+      {"title": "Comunicación PL / ES / EN", "desc": "Una buena opción para negocios en España que atienden a polacos, españoles y clientes internacionales."}
     ],
+    "projectStatus": {
+      "eyebrow": "Cómo empezamos",
+      "title": "Primero revisamos la situación, después elegimos una solución concreta",
+      "description": "No todos los negocios necesitan una web nueva o un sistema grande desde el principio. A veces basta con mejorar el perfil de Google, facilitar el contacto por WhatsApp, añadir un formulario u ordenar las consultas. Por eso empiezo con una revisión breve y una conversación.",
+      "steps": [
+        {
+          "title": "Enseñas lo que ya tienes",
+          "desc": "Puedes enviar tu web, perfil de Google, redes sociales o una breve descripción del negocio."
+        },
+        {
+          "title": "Elegimos el problema principal",
+          "desc": "Revisamos si la mayor barrera es la visibilidad, el contacto, el formulario, las reservas o el caos entre mensajes."
+        },
+        {
+          "title": "Después decidimos",
+          "desc": "Si tiene sentido, podemos hablar de una mejora pequeña y concreta en lugar de forzar un proyecto grande."
+        }
+      ],
+      "note": "En esta fase lo más importante son las conversaciones con negocios locales y sus necesidades reales. Los trabajos de pago se acordarán individualmente una vez aclaradas las cuestiones formales.",
+      "cta": "Empezar con una mini-auditoría"
+    },
     "changeLanguage": "Cambiar idioma"
   },
   "pricing": {
@@ -97,13 +146,14 @@
     ]
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Preguntas frecuentes",
     "items": [
-      {"q": "¿Cuál es el proceso?", "a": "Discovery → Design → Development → Launch. Iterativo."},
-      {"q": "¿Puedo editar el contenido?", "a": "Sí, el contenido está en archivos JSON (i18n)."},
-      {"q": "¿Hay backend?", "a": "En el MVP usamos Formspree o un endpoint simple de email."},
-      {"q": "¿Es rápido?", "a": "Sí, apuntamos a Core Web Vitals en verde."},
-      {"q": "¿Analítica?", "a": "Sí, Plausible – ligero y respetuoso con la privacidad."}
+      {"q": "¿La mini-auditoría es realmente gratuita?", "a": "Sí. Es una revisión breve y gratuita de tu web, perfil de Google o presencia online. Recibirás algunas sugerencias concretas sin compromiso."},
+      {"q": "¿RafLab ya es una actividad oficial?", "a": "El proyecto está en fase de preparación y validación. Actualmente estoy hablando con negocios locales para entender qué problemas merece la pena resolver primero."},
+      {"q": "¿Para quién es esta ayuda?", "a": "Para pequeños negocios, autónomos, servicios locales, negocios polacos en España y empresas que quieren mejorar su web, Google, WhatsApp, formularios o una reserva online sencilla."},
+      {"q": "¿Necesito tener ya una página web?", "a": "No. Puedes enviar un perfil de Google, Facebook, Instagram o una breve descripción del negocio. La mini-auditoría puede empezar con lo que ya tienes."},
+      {"q": "¿En qué idiomas podemos comunicarnos?", "a": "Podemos comunicarnos en polaco e inglés. Los textos en español los preparo con cuidado y revisión para que suenen naturales y claros."},
+      {"q": "¿Qué pasa después de la mini-auditoría?", "a": "Recibes observaciones concretas. Si tiene sentido para ambas partes, después podemos hablar de una posible solución o presupuesto, una vez aclaradas las cuestiones formales."}
     ]
   },
   "services": {
@@ -136,13 +186,19 @@
     },
     "cta": "Contáctanos"
   },
+  "contactPage": {
+    "title": "Envía tu web, perfil de Google o describe el problema",
+    "description": "Puedes contar si se trata de la web, Google, WhatsApp, formulario, reservas o automatización. El mejor primer paso es una mini-auditoría."
+  },
   "contactForm": {
     "nameLabel": "Nombre",
     "emailLabel": "Correo electrónico",
-    "messageLabel": "Mensaje",
-    "messagePlaceholder": "Describe tus necesidades brevemente",
-    "description": "Escríbenos y te responderemos pronto.",
-    "submit": "Enviar mensaje",
+    "messageLabel": "Enlace y breve descripción",
+    "messageHint": "Puedes pegar el enlace de tu web, perfil de Google, Facebook o Instagram y añadir unas líneas sobre el negocio.",
+    "messagePlaceholder": "Por ejemplo, enlace a la web o perfil de Google y una breve descripción del negocio",
+    "namePlaceholder": "Juan",
+    "emailPlaceholder": "juan@example.com",
+    "submit": "Enviar para mini-auditoría",
     "success": "Enviado. ¡Gracias!",
     "error": "Algo salió mal. Inténtalo de nuevo."
   }

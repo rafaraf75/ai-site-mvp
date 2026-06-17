@@ -20,16 +20,27 @@
     ]
   },
   "servicesPreview": {
-    "title": "Services",
-    "cta": "View offering",
-    "ai": {
-      "title": "AI Assistants",
-      "desc": "Creative, productive helpers tailored to your workflows."
-    },
-    "web": {
-      "title": "Websites & Apps",
-      "desc": "Modern, fast and accessible sites with SEO focus."
-    }
+    "title": "How can I help?",
+    "subtitle": "At this stage, the most important things are small, practical steps: better visibility, easier contact and first automations.",
+    "cta": "Request a mini-audit",
+    "items": [
+      {
+        "title": "Local business website",
+        "desc": "A simple, fast website with services, location, Google Maps, WhatsApp and a contact form."
+      },
+      {
+        "title": "Forms and bookings",
+        "desc": "An enquiry or booking form that collects the key details and sends them in an organised way."
+      },
+      {
+        "title": "Google, WhatsApp and contact",
+        "desc": "Improving the customer path: from finding the business on Google to contacting you easily from mobile."
+      },
+      {
+        "title": "Simple automations",
+        "desc": "Connecting a form, email, spreadsheet or notifications so fewer things need to be done manually."
+      }
+    ]
   },
   "nav": {
     "home": "Home",
@@ -42,17 +53,55 @@
     "social": "Social media"
   },
   "home": {
-    "heading": "AI assistants and sites that deliver",
-    "subheading": "We build fast, accessible, SEO-friendly landing pages with i18n and dark mode.",
-    "ctaDemo": "See demo",
-    "ctaCall": "Book a call",
-    "benefitsTitle": "Benefits",
+    "heading": "Websites, forms and automations for small businesses in Spain",
+    "subheading": "I help local businesses improve their online presence and customer contact through a clear website, Google, WhatsApp, forms and simple automations. The best first step is a short mini-audit of the website or Google profile.",
+    "localLine": "Alicante · Santa Pola · Gran Alacant · Elche · PL / ES / EN",
+    "ctaPrimary": "Request a mini-audit",
+    "ctaSecondary": "Message on WhatsApp",
+    "miniAudit": {
+      "eyebrow": "Free mini-audit",
+      "title": "Let’s check whether your business gets enquiries easily online",
+      "description": "Send me the link to your website or Google profile. I’ll review a few practical elements that influence customer trust and how easy it is to contact you.",
+      "checklist": [
+        "Whether customers quickly understand what you offer",
+        "Whether it is easy to message on WhatsApp, call or send an enquiry",
+        "Whether the website works well on mobile",
+        "Whether the Google profile looks trustworthy",
+        "Whether services, location and languages are clear",
+        "Whether a simple form or online booking could help"
+      ],
+      "note": "The mini-audit is the first step: it helps identify which improvements make the most sense — website, Google profile, WhatsApp, form, online booking or a simple automation.",
+      "cta": "I want a mini-audit"
+    },
+    "benefitsTitle": "What can RafLab improve?",
+    "benefitsSubtitle": "I focus on simple changes that help a small business look more trustworthy online and receive customer enquiries more easily.",
     "benefits": [
-      {"title": "Speed", "desc": "Green Core Web Vitals with smart optimizations."},
-      {"title": "i18n", "desc": "Full PL/EN/ES translations and hreflang."},
-      {"title": "Dark mode", "desc": "System-aware theme with a toggle."},
-      {"title": "A11y", "desc": "Accessible by default: aria, contrast, keyboard."}
+      {"title": "More contacts from mobile", "desc": "Your website and Google profile should guide customers directly to a conversation, WhatsApp, phone call or form."},
+      {"title": "Better Google presence", "desc": "I help organise basic information, services, location and links so customers understand your offer faster."},
+      {"title": "Less enquiry chaos", "desc": "Forms and simple automations help collect customer details in one place instead of losing them across messages."},
+      {"title": "PL / ES / EN communication", "desc": "Useful for businesses in Spain that serve Polish, Spanish and international customers."}
     ],
+    "projectStatus": {
+      "eyebrow": "How we start",
+      "title": "First we review the situation, then choose a concrete solution",
+      "description": "Not every business needs a new website or a large system from the start. Sometimes it is enough to improve the Google profile, make WhatsApp contact easier, add a form or organise enquiries. That is why I start with a short review and a conversation.",
+      "steps": [
+        {
+          "title": "Show what you already have",
+          "desc": "You can send your website, Google profile, social media or a short description of the business."
+        },
+        {
+          "title": "Pick the main problem",
+          "desc": "We check whether the biggest barrier is visibility, contact, forms, bookings or message chaos."
+        },
+        {
+          "title": "Decide after that",
+          "desc": "If it makes sense, we can discuss a small, concrete improvement instead of forcing a large project."
+        }
+      ],
+      "note": "At this stage, the most important thing is talking with local businesses and understanding practical needs. Paid work will be agreed individually once the formal details are clarified.",
+      "cta": "Start with a mini-audit"
+    },
     "changeLanguage": "Change language"
   },
   "pricing": {
@@ -97,13 +146,14 @@
     ]
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Frequently asked questions",
     "items": [
-      {"q": "What's the process?", "a": "Discovery → Design → Development → Launch. Iterative."},
-      {"q": "Can I edit content?", "a": "Yes, content lives in JSON files (i18n)."},
-      {"q": "Is there a backend?", "a": "In MVP we use Formspree or a simple email endpoint."},
-      {"q": "Is it fast?", "a": "Yes, we target green Core Web Vitals."},
-      {"q": "Analytics?", "a": "Yes, Plausible – lightweight and privacy-friendly."}
+      {"q": "Is the mini-audit really free?", "a": "Yes. It is a short, free review of your website, Google profile or online presence. You will receive a few concrete suggestions with no obligation."},
+      {"q": "Is RafLab already an official business?", "a": "The project is currently in preparation and validation. I am talking with local businesses to understand which problems are worth solving first."},
+      {"q": "Who is this for?", "a": "For small businesses, autónomos, local service providers, Polish businesses in Spain and companies that want to improve their website, Google, WhatsApp, forms or simple online booking."},
+      {"q": "Do I need to already have a website?", "a": "No. You can send a Google profile, Facebook, Instagram or a short description of the business. The mini-audit can start with what you already have."},
+      {"q": "Which languages can we use?", "a": "We can communicate in Polish and English. Spanish content is prepared carefully and checked so it sounds clear and natural."},
+      {"q": "What happens after the mini-audit?", "a": "You receive concrete feedback. If it makes sense for both sides, we can later discuss a possible solution or estimate once the formal details are clarified."}
     ]
   },
   "services": {
@@ -136,13 +186,19 @@
     },
     "cta": "Contact us"
   },
+  "contactPage": {
+    "title": "Send your website, Google profile or describe the problem",
+    "description": "You can tell me whether it is about the website, Google, WhatsApp, forms, bookings or automation. The best first step is a mini-audit."
+  },
   "contactForm": {
     "nameLabel": "Name",
     "emailLabel": "Email",
-    "messageLabel": "Message",
-    "messagePlaceholder": "Describe your needs briefly",
-    "description": "Drop us a line and we'll get back to you.",
-    "submit": "Send message",
+    "messageLabel": "Link and short description",
+    "messageHint": "You can paste a website link, Google profile, Facebook or Instagram and add a few lines about the business.",
+    "messagePlaceholder": "For example, a website or Google profile link and a short business description",
+    "namePlaceholder": "John",
+    "emailPlaceholder": "john@example.com",
+    "submit": "Send for mini-audit",
     "success": "Sent. Thanks!",
     "error": "Something went wrong. Please try again."
   }

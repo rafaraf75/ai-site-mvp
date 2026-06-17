@@ -1,46 +1,51 @@
 import LangSwitcher from "@/components/common/LangSwitcher";
 import ThemeToggle from "@/components/common/ThemeToggle";
 import Hero from "@/components/sections/Hero";
+import MiniAudit from "@/components/sections/MiniAudit";
 import Benefits from "@/components/sections/Benefits";
 import ServicesPreview from "@/components/sections/ServicesPreview";
-import Cases from "@/components/sections/Cases";
-import Testimonials from "@/components/sections/Testimonials";
-import Pricing from "@/components/sections/Pricing";
+import ProjectStatus from "@/components/sections/ProjectStatus";
 import FAQ from "@/components/sections/FAQ";
 
 type BenefitItem = { title: string; desc: string };
 type ServicePreview = { title: string; desc: string };
-type CaseItem = { label: string; value: string; desc: string };
-type TestimonialItem = { quote: string; author: string; role: string };
-type PricingPlan = {
-  name: string;
-  price: string;
-  period?: string;
-  features: string[];
-  cta: string;
-  highlight?: boolean;
-};
 type FaqItem = { q: string; a: string };
+type ProjectStatusStep = { title: string; desc: string };
 
 type Messages = {
   home: {
     heading: string;
     subheading: string;
-    ctaDemo: string;
-    ctaCall: string;
+    localLine: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+    miniAudit: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      checklist: string[];
+      note: string;
+      cta: string;
+    };
     benefitsTitle: string;
+    benefitsSubtitle: string;
     benefits: BenefitItem[];
+    projectStatus: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      steps: ProjectStatusStep[];
+      note: string;
+      cta: string;
+    };
     changeLanguage: string;
   };
   servicesPreview: {
     title: string;
+    subtitle: string;
     cta: string;
-    ai: ServicePreview;
-    web: ServicePreview;
+    items: ServicePreview[];
   };
-  cases: { title: string; items: CaseItem[] };
-  testimonials: { title: string; items: TestimonialItem[] };
-  pricing: { title: string; plans: PricingPlan[] };
   faq: { title: string; items: FaqItem[] };
 };
 
@@ -57,38 +62,46 @@ export default async function HomeLocale({
       <Hero
         title={messages.home.heading}
         subtitle={messages.home.subheading}
-        ctaDemo={{label: messages.home.ctaDemo, href: `/${locale}/services`}}
-        ctaCall={{label: messages.home.ctaCall, href: `/${locale}/contact`}}
+        localLine={messages.home.localLine}
+        primaryCta={{label: messages.home.ctaPrimary, href: `/${locale}/contact?type=mini-audit`}}
+        secondaryCta={{label: messages.home.ctaSecondary, href: `/${locale}/contact`}}
       />
 
-      <Benefits title={messages.home.benefitsTitle} items={messages.home.benefits} />
+      <MiniAudit
+        eyebrow={messages.home.miniAudit.eyebrow}
+        title={messages.home.miniAudit.title}
+        description={messages.home.miniAudit.description}
+        checklist={messages.home.miniAudit.checklist}
+        note={messages.home.miniAudit.note}
+        cta={{label: messages.home.miniAudit.cta, href: `/${locale}/contact?type=mini-audit`}}
+      />
+
+      <Benefits
+        title={messages.home.benefitsTitle}
+        subtitle={messages.home.benefitsSubtitle}
+        items={messages.home.benefits}
+      />
 
       <ServicesPreview
         title={messages.servicesPreview.title}
+        subtitle={messages.servicesPreview.subtitle}
         ctaLabel={messages.servicesPreview.cta}
-        cards={[
-          {
-            title: messages.servicesPreview.ai.title,
-            desc: messages.servicesPreview.ai.desc,
-            href: `/${locale}/services#ai`,
-            icon: "bot",
-          },
-          {
-            title: messages.servicesPreview.web.title,
-            desc: messages.servicesPreview.web.desc,
-            href: `/${locale}/services#web`,
-            icon: "web",
-          },
-        ]}
+        cards={messages.servicesPreview.items.map((item, index) => ({
+          title: item.title,
+          desc: item.desc,
+          href: `/${locale}/contact?type=mini-audit`,
+          icon: index % 2 === 0 ? "web" : "bot",
+        }))}
       />
 
-      <Cases title={messages.cases.title} items={messages.cases.items} />
-      <Testimonials
-        title={messages.testimonials.title}
-        items={messages.testimonials.items}
+      <ProjectStatus
+        eyebrow={messages.home.projectStatus.eyebrow}
+        title={messages.home.projectStatus.title}
+        description={messages.home.projectStatus.description}
+        steps={messages.home.projectStatus.steps}
+        note={messages.home.projectStatus.note}
+        cta={{label: messages.home.projectStatus.cta, href: `/${locale}/contact?type=mini-audit`}}
       />
-
-      <Pricing title={messages.pricing.title} plans={messages.pricing.plans} locale={locale} />
       <FAQ title={messages.faq.title} items={messages.faq.items} />
 
       <section className="py-10 mx-auto max-w-6xl px-4 sm:px-6">
