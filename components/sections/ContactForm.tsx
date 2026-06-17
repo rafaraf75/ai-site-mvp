@@ -13,6 +13,9 @@ export type ContactFormMessages = {
   emailLabel: string;
   messageLabel: string;
   messagePlaceholder: string;
+  namePlaceholder?: string;
+  emailPlaceholder?: string;
+  messageHint?: string;
   submit: string;
   success: string;
   error: string;
@@ -56,7 +59,12 @@ export default function ContactForm({
         <label className="block text-sm font-medium" htmlFor="name">
           {messages.nameLabel}
         </label>
-        <Input id="name" placeholder="Jan" aria-invalid={!!errors.name} {...register('name')} />
+        <Input
+          id="name"
+          placeholder={messages.namePlaceholder ?? 'Jan'}
+          aria-invalid={!!errors.name}
+          {...register('name')}
+        />
         {errors.name?.message && (
           <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
         )}
@@ -68,7 +76,7 @@ export default function ContactForm({
         <Input
           id="email"
           type="email"
-          placeholder="jan@example.com"
+          placeholder={messages.emailPlaceholder ?? 'jan@example.com'}
           aria-invalid={!!errors.email}
           {...register('email')}
         />
@@ -80,6 +88,9 @@ export default function ContactForm({
         <label className="block text-sm font-medium" htmlFor="message">
           {messages.messageLabel}
         </label>
+        {messages.messageHint ? (
+          <p className="mt-1 text-sm text-muted-foreground">{messages.messageHint}</p>
+        ) : null}
         <textarea
           id="message"
           className="w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
