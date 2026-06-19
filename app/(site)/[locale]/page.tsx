@@ -16,7 +16,6 @@ type Messages = {
     subheading: string;
     localLine: string;
     ctaPrimary: string;
-    ctaSecondary: string;
     miniAudit: {
       eyebrow: string;
       title: string;
@@ -44,6 +43,10 @@ type Messages = {
     items: ServicePreview[];
   };
   faq: { title: string; items: FaqItem[] };
+  whatsapp: {
+    label: string;
+    ariaLabel: string;
+  };
 };
 
 export default async function HomeLocale({
@@ -65,8 +68,10 @@ export default async function HomeLocale({
         secondaryCta={
           whatsappUrl
             ? {
-                label: messages.home.ctaSecondary,
+                label: messages.whatsapp.label,
                 href: whatsappUrl,
+                ariaLabel: messages.whatsapp.ariaLabel,
+                title: messages.whatsapp.ariaLabel,
                 external: true,
               }
             : undefined

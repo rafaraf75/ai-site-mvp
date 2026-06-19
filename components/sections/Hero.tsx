@@ -13,7 +13,13 @@ type Props = {
   subtitle: string;
   localLine: string;
   primaryCta: {label: string; href: string};
-  secondaryCta?: {label: string; href: string; external?: boolean};
+  secondaryCta?: {
+    label: string;
+    href: string;
+    ariaLabel?: string;
+    title?: string;
+    external?: boolean;
+  };
 };
 
 export default function Hero({title, subtitle, localLine, primaryCta, secondaryCta}: Props) {
@@ -80,7 +86,8 @@ export default function Hero({title, subtitle, localLine, primaryCta, secondaryC
                 {secondaryCta.external ? (
                   <a
                     href={secondaryCta.href}
-                    aria-label={secondaryCta.label}
+                    aria-label={secondaryCta.ariaLabel ?? secondaryCta.label}
+                    title={secondaryCta.title ?? secondaryCta.label}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -94,7 +101,11 @@ export default function Hero({title, subtitle, localLine, primaryCta, secondaryC
                     </span>
                   </a>
                 ) : (
-                  <Link href={secondaryCta.href} aria-label={secondaryCta.label}>
+                  <Link
+                    href={secondaryCta.href}
+                    aria-label={secondaryCta.ariaLabel ?? secondaryCta.label}
+                    title={secondaryCta.title ?? secondaryCta.label}
+                  >
                     <span className="inline-flex items-center gap-2">
                       {secondaryCta.label}
                       <ArrowRight

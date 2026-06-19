@@ -1,13 +1,21 @@
+import {Button} from "@/components/ui/button";
 import ContactForm, {type ContactFormMessages} from "@/components/sections/ContactForm";
 
 export default async function ContactPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
+  const whatsappUrl = process.env.NEXT_PUBLIC_WHATSAPP_URL?.trim();
   const messages = (await import(`@/locales/${locale}.json`)).default as {
     contactPage: {
       title: string;
       description: string;
     };
     contactForm: ContactFormMessages;
+    whatsapp: {
+      ariaLabel: string;
+      contactIntro: string;
+      contactText: string;
+      contactCta: string;
+    };
   };
 
   return (
@@ -25,6 +33,25 @@ export default async function ContactPage({params}: {params: Promise<{locale: st
       <div className="contact-shell max-w-4xl">
         <div className="contact-form-panel">
           <ContactForm locale={locale} messages={messages.contactForm} />
+          {whatsappUrl ? (
+            <div className="mt-6 border-t border-white/10 pt-5">
+              <p className="text-sm font-semibold text-white">{messages.whatsapp.contactIntro}</p>
+              <p className="contact-form-hint mt-2 text-sm">{messages.whatsapp.contactText}</p>
+              <div className="mt-4">
+                <Button asChild size="lg" variant="secondary" className="group min-w-[15rem]">
+                  <a
+                    href={whatsappUrl}
+                    aria-label={messages.whatsapp.ariaLabel}
+                    title={messages.whatsapp.ariaLabel}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>{messages.whatsapp.contactCta}</span>
+                  </a>
+                </Button>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

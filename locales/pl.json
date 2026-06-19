@@ -85,7 +85,6 @@
     "subheading": "Pomagam lokalnym firmom poprawić obecność online i kontakt z klientami przez stronę internetową, Google, WhatsApp, formularze oraz proste automatyzacje. Najlepszy pierwszy krok to krótki mini-audyt strony lub profilu Google.",
     "localLine": "Alicante · Santa Pola · Gran Alacant · Elche · PL / ES / EN",
     "ctaPrimary": "Poproś o mini-audyt",
-    "ctaSecondary": "Napisz na WhatsApp",
     "miniAudit": {
       "eyebrow": "Bezpłatny mini-audyt",
       "title": "Sprawdźmy, czy Twoja firma łatwo zdobywa zapytania z internetu",
@@ -283,5 +282,12 @@
     "submit": "Wyślij do mini-audytu",
     "success": "Wysłano. Dzięki!",
     "error": "Coś poszło nie tak. Spróbuj ponownie."
+  },
+  "whatsapp": {
+    "label": "Napisz na WhatsApp",
+    "ariaLabel": "Napisz do RafLab na WhatsApp",
+    "contactIntro": "Wolisz szybki kontakt?",
+    "contactText": "Mo?esz te? napisa? bezpo?rednio przez WhatsApp.",
+    "contactCta": "Napisz na WhatsApp"
   }
 }

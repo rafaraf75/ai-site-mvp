@@ -85,7 +85,6 @@
     "subheading": "I help local businesses improve their online presence and customer contact through a clear website, Google, WhatsApp, forms and simple automations. The best first step is a short mini-audit of the website or Google profile.",
     "localLine": "Alicante · Santa Pola · Gran Alacant · Elche · PL / ES / EN",
     "ctaPrimary": "Request a mini-audit",
-    "ctaSecondary": "Message on WhatsApp",
     "miniAudit": {
       "eyebrow": "Free mini-audit",
       "title": "Let’s check whether your business gets enquiries easily online",
@@ -283,5 +282,12 @@
     "submit": "Send for mini-audit",
     "success": "Sent. Thanks!",
     "error": "Something went wrong. Please try again."
+  },
+  "whatsapp": {
+    "label": "Message on WhatsApp",
+    "ariaLabel": "Message RafLab on WhatsApp",
+    "contactIntro": "Prefer a quick message?",
+    "contactText": "You can also message me directly on WhatsApp.",
+    "contactCta": "Message on WhatsApp"
   }
 }
