@@ -4,6 +4,7 @@ import Benefits from "@/components/sections/Benefits";
 import ServicesPreview from "@/components/sections/ServicesPreview";
 import ProjectStatus from "@/components/sections/ProjectStatus";
 import FAQ from "@/components/sections/FAQ";
+import {buildWhatsAppHref, getWhatsAppBaseUrl} from "@/lib/whatsapp";
 
 type BenefitItem = { title: string; desc: string };
 type ServicePreview = { title: string; desc: string };
@@ -46,6 +47,7 @@ type Messages = {
   whatsapp: {
     label: string;
     ariaLabel: string;
+    prefilledMessage: string;
   };
 };
 
@@ -56,7 +58,10 @@ export default async function HomeLocale({
 }) {
   const {locale} = await params;
   const messages = (await import(`@/locales/${locale}.json`)).default as Messages;
-  const whatsappUrl = process.env.NEXT_PUBLIC_WHATSAPP_URL?.trim();
+  const whatsappHref = buildWhatsAppHref(
+    getWhatsAppBaseUrl(),
+    messages.whatsapp.prefilledMessage,
+  );
 
   return (
     <main className="">
@@ -66,10 +71,10 @@ export default async function HomeLocale({
         localLine={messages.home.localLine}
         primaryCta={{label: messages.home.ctaPrimary, href: `/${locale}/contact?type=mini-audit`}}
         secondaryCta={
-          whatsappUrl
+          whatsappHref
             ? {
                 label: messages.whatsapp.label,
-                href: whatsappUrl,
+                href: whatsappHref,
                 ariaLabel: messages.whatsapp.ariaLabel,
                 title: messages.whatsapp.ariaLabel,
                 external: true,

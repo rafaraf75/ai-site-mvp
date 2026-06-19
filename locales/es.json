@@ -286,8 +286,9 @@
   "whatsapp": {
     "label": "Escribir por WhatsApp",
     "ariaLabel": "Escribir a RafLab por WhatsApp",
-    "contactIntro": "?Prefieres un contacto r?pido?",
-    "contactText": "Tambi?n puedes escribir directamente por WhatsApp.",
-    "contactCta": "Escribir por WhatsApp"
+    "contactIntro": "\u00bfPrefieres un contacto r\u00e1pido?",
+    "contactText": "Tambi\u00e9n puedes escribir directamente por WhatsApp.",
+    "contactCta": "Escribir por WhatsApp",
+    "prefilledMessage": "Hola, me gustar\u00eda pedir una mini-auditor\u00eda para mi negocio. Mi web o perfil de Google es:"
   }
 }

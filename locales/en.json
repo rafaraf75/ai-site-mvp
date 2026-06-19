@@ -288,6 +288,7 @@
     "ariaLabel": "Message RafLab on WhatsApp",
     "contactIntro": "Prefer a quick message?",
     "contactText": "You can also message me directly on WhatsApp.",
-    "contactCta": "Message on WhatsApp"
+    "contactCta": "Message on WhatsApp",
+    "prefilledMessage": "Hi, I would like to request a mini-audit for my business. My website or Google profile is:"
   }
 }
